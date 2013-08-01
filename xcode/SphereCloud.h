@@ -26,12 +26,6 @@ public:
     SphereCloud();
     SphereCloud(int number, int size);
     
-    //FNS
-    void draw();
-    void update();
-    void addSphere();
-    int getNumber();
-    
     //VARS
     int mNumber;
     int mSize;
@@ -41,6 +35,14 @@ public:
     cinder::gl::DisplayList tempCloud;
     gl::Material ballMaterial;
     vector<Vec3f> rotations;
+    vector<Vec3f> locations;
+    Vec3f testLoc;
+    
+    //FNS
+    void draw();
+    void update(float x, float y, float z);
+    void addSphere();
+    int getNumber();
 
     
 };

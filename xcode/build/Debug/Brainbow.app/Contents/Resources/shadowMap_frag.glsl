@@ -16,3 +16,4 @@ void main(void)
 	float shadow = shadow2D( depthTexture, coord ).r;
 	gl_FragColor = ((ambient + (0.2 + 0.8 * shadow) * diffuse) + specular * shadow);
 }
+

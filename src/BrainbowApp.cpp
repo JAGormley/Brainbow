@@ -107,7 +107,6 @@ void BrainbowApp::prepareSettings( Settings *settings )
 
 void BrainbowApp::setup()
 {
-    mCloud = SphereCloud(0, 100);
     mAudio.setUp();
     
     // Set up OpenGL
@@ -120,7 +119,8 @@ void BrainbowApp::setup()
     ballTimer.start();
     
     // LIGHTING
-    glPolygonOffset( 1.0f, 1.0f );
+    //here
+  glPolygonOffset( 1.0f, 1.0f );
 	glEnable( GL_LIGHTING );
 	glEnable( GL_DEPTH_TEST );
 
@@ -167,6 +167,8 @@ void BrainbowApp::setup()
     discMaterial.setEmission(ColorA(1, 1, 1, 1 ));
     
     initShadowMap();
+    
+    mCloud = SphereCloud(0, 100);
     
     mSphere = gl::DisplayList( GL_COMPILE );
     mSphere.newList();
@@ -231,7 +233,7 @@ void BrainbowApp::draw()
     if (mHands.empty())
         mLight->disable();    
     
-//    updateShadowMap();
+    updateShadowMap();
     
     gl::enableDepthRead();
     gl::enableDepthWrite();    
@@ -254,6 +256,7 @@ void BrainbowApp::draw()
     
     
 //    myImage.bind();
+    mShader.bind(); 
     glPushMatrix();
     glTranslated( scaledX, scaledY, scaledZ);
     gl::draw(sphere.getVBO());
@@ -269,7 +272,7 @@ void BrainbowApp::draw()
     glPushMatrix();
     glTranslated( getWindowWidth() * 0.5f, getWindowHeight() * 0.5f, zshift );
     //    if (lightFade > .45f)
-    mCloud.update();
+    mCloud.update(scaledX, scaledY, scaledZ);
     glPopMatrix();
     
     if (drawDiamond){
@@ -362,6 +365,9 @@ void BrainbowApp::update()
     
     //AUDIO
     mAudio.update();
+
+
+    //SCENES
     intro();   
     
     //LIGHT
@@ -383,21 +389,22 @@ void BrainbowApp::intro(){
         musicOn = true;
     }
     
-    //addspheres
-    if (lightFade >= 0.45f && ballTimer.getSeconds() > 0.2f && mCloud.getNumber() < 20){
-        mCloud.addSphere();
-        ballTimer = 0;
-        ballTimer.start();
-    }
-    else if (lightFade >= 0.45f && ballTimer.getSeconds() > 1.0f && mCloud.getNumber() < 600 && !gong){
-        mCloud.addSphere();
-        ballTimer = 0;
-        ballTimer.start();
-    }
-    
+//    //addspheres
+//    if (lightFade >= 0.45f && ballTimer.getSeconds() > 0.2f && mCloud.getNumber() < 20){
+//        mCloud.addSphere();
+//        ballTimer = 0;
+//        ballTimer.start();
+//    }
+//    else if (lightFade >= 0.45f && ballTimer.getSeconds() > 1.0f && mCloud.getNumber() < 600 && !gong){
+//        mCloud.addSphere();
+//        ballTimer = 0;
+//        ballTimer.start();
+//    }
+//    
     //INTO DIAMOND
-    if (gongTimer.getSeconds()>1 && scaledZ < 290 && scaledZ > 100 && !gong && getElapsedSeconds() > 25){
+    if (gongTimer.getSeconds()>1 && scaledZ < 290 && scaledZ > 100 && !gong && getElapsedSeconds() > 0){
         mAudio.playTraz("activate");
+        mCloud.addSphere();
         gong = true;
         //        mAudio.playTraz("middrone");
         gongTimer.stop();
@@ -405,15 +412,14 @@ void BrainbowApp::intro(){
     }
     
     if (gong && zshift < 500 ){
-        zshift++;
-        scaledZ += zshift;
+//        zshift++;
+//        scaledZ += zshift;
     }
-    if (mCloud.getNumber() < 300 && ballTimer.getSeconds() > 0.1f && gong && zshift > 0){
-        mCloud.addSphere();
-        ballTimer = 0;
-        ballTimer.start();
-    }
-    
+//    if (mCloud.getNumber() < 300 && ballTimer.getSeconds() > 0.1f && gong && zshift > 0){
+//        mCloud.addSphere();
+//        ballTimer = 0;
+//        ballTimer.start();
+//    }    
 }
 
 

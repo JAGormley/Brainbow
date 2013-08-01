@@ -8,9 +8,9 @@ dependencies: \
   ../../../../git/notschool/Cinder/boost/boost/tuple/detail/tuple_basic.hpp \
   ../../../../git/notschool/Cinder/boost/boost/type_traits/cv_traits.hpp \
   ../../../../git/notschool/Cinder/boost/boost/type_traits/add_cv.hpp \
-  ../../../../git/notschool/Cinder/boost/boost/type_traits/detail/type_trait_def.hpp \
-  ../../../../git/notschool/Cinder/boost/boost/type_traits/detail/template_arity_spec.hpp \
-  ../../../../git/notschool/Cinder/boost/boost/type_traits/detail/type_trait_undef.hpp \
+  /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../../../../git/notschool/Cinder/boost/boost/type_traits/detail/type_trait_def.hpp \
+  /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../../../../git/notschool/Cinder/boost/boost/type_traits/detail/template_arity_spec.hpp \
+  /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../../../../git/notschool/Cinder/boost/boost/type_traits/detail/type_trait_undef.hpp \
   ../../../../git/notschool/Cinder/boost/boost/type_traits/remove_volatile.hpp \
   ../../../../git/notschool/Cinder/include/cinder/Arcball.h \
   ../../../../git/notschool/Cinder/include/cinder/MayaCamUI.h \

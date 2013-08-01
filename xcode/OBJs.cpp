@@ -28,6 +28,7 @@ OBJs::OBJs(string objectRef, string textureRef){
     ObjLoader loader( (DataSourceRef)loadResource( objectRef ) );
     loader.load( &mMesh );
     mVBO = gl::VboMesh( mMesh );
+
     
 }
 

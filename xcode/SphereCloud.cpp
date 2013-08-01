@@ -13,6 +13,7 @@
 #include "cinder/gl/DisplayList.h"
 #include "cinder/gl/gl.h"
 #include "cinder/Utilities.h"
+#include <math.h>
 
 using namespace ci;
 using namespace ci::app;
@@ -21,6 +22,8 @@ using namespace std;
 SphereCloud::SphereCloud(){}
 
 SphereCloud::SphereCloud(int number, int size){
+    
+    
     mNumber = number;
     mSize = size;
     
@@ -31,17 +34,7 @@ SphereCloud::SphereCloud(int number, int size){
     ballMaterial.setEmission(ColorA(1, 1, 1, 1 ));
     
     for (int i = 0; i < mNumber ; i++){
-        int x = coords.nextInt(-mSize, mSize);
-        int y = coords.nextInt(-mSize, mSize);
-        int z = coords.nextInt(-mSize, mSize);
-        tempCloud = cinder::gl::DisplayList (GL_COMPILE);
-        tempCloud.newList();
-        gl::drawSphere(Vec3f(x, y, z), 10);
-        tempCloud.endList();
-        tempCloud.setMaterial( ballMaterial );
-        
-        rotations[i] = coords.nextVec3f();
-        cList.push_back(tempCloud);
+        addSphere();
     }
 }
 
@@ -57,27 +50,33 @@ void SphereCloud::addSphere(){
     tempCloud.endList();    
     tempCloud.setMaterial( ballMaterial );
     
+    cout << tempCloud.getModelMatrix().m00 << endl;
+    locations.push_back(Vec3f(x,y,z));
     rotations.push_back(coords.nextVec3f());
     cList.push_back(tempCloud);
     mNumber++;
+    
+    testLoc = Vec3f(x, y, z);
 }
 
-void SphereCloud::update(){
+void SphereCloud::update(float x, float y, float z){
     int i = 0;
     for( vector<cinder::gl::DisplayList>::iterator sphereDL = cList.begin(); sphereDL != cList.end(); ++sphereDL){
 //        bool minus = coords.nextBool();
 //        float one = coords.nextFloat()/70;
 //        float two = coords.nextFloat();
 //        float three = coords.nextFloat();
-            sphereDL->getModelMatrix().rotate(rotations[i], .005f);
-        
-          // how is rotating the model matrix affecting the draw location of the sphere
-
-//        cout << "m00: " << sphereDL->getModelMatrix().m00<< endl;
-//        cout << "m01: " << sphereDL->getModelMatrix().m01<< endl;
-//        cout << "m10: " << sphereDL->getModelMatrix().m10<< endl;
-//        cout << "m11: " << sphereDL->getModelMatrix().m11<< endl;
+        Vec3f rotater = Vec3f(cos(getElapsedSeconds()*rotations[i].x), cos(getElapsedSeconds()*rotations[i].y), cos(getElapsedSeconds()*rotations[i].z));
+//            sphereDL->getModelMatrix().rotate(rotations[i], .005f);        
+        sphereDL->getModelMatrix().translate (rotater);
+        cout << "before: " << locations[i] << endl;
+        locations[i] *= rotater;
+        cout << "after: " << locations[i] << endl;
+        gl::drawSphere(locations[i], 70);
+//        if (locations[i].x > x)
             sphereDL->draw();
+//        testLoc *= rotations[i]*.005;
+//        cout << testLoc * sphereDL->getModelMatrix()  << endl;
         i++;
     }
 }
