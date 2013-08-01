@@ -1,0 +1,21 @@
+dependencies: \
+  /Users/andrewjgormley/Documents/jams/Brainbow/xcode/OBJs.cpp \
+  /Users/andrewjgormley/Documents/jams/Brainbow/xcode/OBJs.h \
+  ../../../../git/notschool/Cinder/include/cinder/ObjLoader.h \
+  ../../../../git/notschool/Cinder/include/cinder/TriMesh.h \
+  ../../../../git/notschool/Cinder/boost/boost/tuple/tuple_comparison.hpp \
+  ../../../../git/notschool/Cinder/boost/boost/tuple/tuple.hpp \
+  ../../../../git/notschool/Cinder/boost/boost/tuple/detail/tuple_basic.hpp \
+  ../../../../git/notschool/Cinder/boost/boost/type_traits/cv_traits.hpp \
+  ../../../../git/notschool/Cinder/boost/boost/type_traits/add_cv.hpp \
+  ../../../../git/notschool/Cinder/boost/boost/type_traits/detail/type_trait_def.hpp \
+  ../../../../git/notschool/Cinder/boost/boost/type_traits/detail/template_arity_spec.hpp \
+  ../../../../git/notschool/Cinder/boost/boost/type_traits/detail/type_trait_undef.hpp \
+  ../../../../git/notschool/Cinder/boost/boost/type_traits/remove_volatile.hpp \
+  ../../../../git/notschool/Cinder/include/cinder/Arcball.h \
+  ../../../../git/notschool/Cinder/include/cinder/MayaCamUI.h \
+  ../../../../git/notschool/Cinder/include/cinder/Camera.h \
+  ../../../../git/notschool/Cinder/include/cinder/Sphere.h \
+  ../../../../git/notschool/Cinder/include/cinder/gl/GlslProg.h \
+  ../../../../git/notschool/Cinder/include/cinder/gl/Vbo.h \
+  ../../../../git/notschool/Cinder/include/cinder/gl/Texture.h
