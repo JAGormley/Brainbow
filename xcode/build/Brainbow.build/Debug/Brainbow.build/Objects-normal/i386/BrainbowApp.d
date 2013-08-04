@@ -12,43 +12,43 @@ dependencies: \
   ../../../../git/notschool/Cinder/include/cinder/audio/PcmBuffer.h \
   ../../../../git/notschool/Cinder/boost/boost/preprocessor/seq.hpp \
   ../../../../git/notschool/Cinder/boost/boost/preprocessor/seq/cat.hpp \
-  ../../../../git/notschool/Cinder/boost/boost/preprocessor/arithmetic/dec.hpp \
-  ../../../../git/notschool/Cinder/boost/boost/preprocessor/config/config.hpp \
-  ../../../../git/notschool/Cinder/boost/boost/preprocessor/control/if.hpp \
-  ../../../../git/notschool/Cinder/boost/boost/preprocessor/seq/fold_left.hpp \
-  ../../../../git/notschool/Cinder/boost/boost/preprocessor/seq/seq.hpp \
-  ../../../../git/notschool/Cinder/boost/boost/preprocessor/seq/size.hpp \
-  ../../../../git/notschool/Cinder/boost/boost/preprocessor/tuple/eat.hpp \
-  ../../../../git/notschool/Cinder/boost/boost/preprocessor/seq/elem.hpp \
-  ../../../../git/notschool/Cinder/boost/boost/preprocessor/seq/enum.hpp \
+  /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../../../../git/notschool/Cinder/boost/boost/preprocessor/arithmetic/dec.hpp \
+  /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../../../../git/notschool/Cinder/boost/boost/preprocessor/config/config.hpp \
+  /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../../../../git/notschool/Cinder/boost/boost/preprocessor/control/if.hpp \
+  /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../../../../git/notschool/Cinder/boost/boost/preprocessor/seq/fold_left.hpp \
+  /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../../../../git/notschool/Cinder/boost/boost/preprocessor/seq/seq.hpp \
+  /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../../../../git/notschool/Cinder/boost/boost/preprocessor/seq/size.hpp \
+  /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../../../../git/notschool/Cinder/boost/boost/preprocessor/tuple/eat.hpp \
+  /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../../../../git/notschool/Cinder/boost/boost/preprocessor/seq/elem.hpp \
+  /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../../../../git/notschool/Cinder/boost/boost/preprocessor/seq/enum.hpp \
   ../../../../git/notschool/Cinder/boost/boost/preprocessor/seq/filter.hpp \
-  ../../../../git/notschool/Cinder/boost/boost/preprocessor/control/expr_if.hpp \
-  ../../../../git/notschool/Cinder/boost/boost/preprocessor/facilities/empty.hpp \
-  ../../../../git/notschool/Cinder/boost/boost/preprocessor/tuple/elem.hpp \
-  ../../../../git/notschool/Cinder/boost/boost/preprocessor/tuple/rem.hpp \
-  ../../../../git/notschool/Cinder/boost/boost/preprocessor/seq/first_n.hpp \
+  /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../../../../git/notschool/Cinder/boost/boost/preprocessor/control/expr_if.hpp \
+  /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../../../../git/notschool/Cinder/boost/boost/preprocessor/facilities/empty.hpp \
+  /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../../../../git/notschool/Cinder/boost/boost/preprocessor/tuple/elem.hpp \
+  /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../../../../git/notschool/Cinder/boost/boost/preprocessor/tuple/rem.hpp \
+  /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../../../../git/notschool/Cinder/boost/boost/preprocessor/seq/first_n.hpp \
   ../../../../git/notschool/Cinder/boost/boost/preprocessor/seq/fold_right.hpp \
-  ../../../../git/notschool/Cinder/boost/boost/preprocessor/cat.hpp \
-  ../../../../git/notschool/Cinder/boost/boost/preprocessor/detail/auto_rec.hpp \
+  /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../../../../git/notschool/Cinder/boost/boost/preprocessor/cat.hpp \
+  /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../../../../git/notschool/Cinder/boost/boost/preprocessor/detail/auto_rec.hpp \
   ../../../../git/notschool/Cinder/boost/boost/preprocessor/seq/reverse.hpp \
-  ../../../../git/notschool/Cinder/boost/boost/preprocessor/seq/for_each.hpp \
-  ../../../../git/notschool/Cinder/boost/boost/preprocessor/seq/for_each_i.hpp \
-  ../../../../git/notschool/Cinder/boost/boost/preprocessor/seq/for_each_product.hpp \
+  /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../../../../git/notschool/Cinder/boost/boost/preprocessor/seq/for_each.hpp \
+  /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../../../../git/notschool/Cinder/boost/boost/preprocessor/seq/for_each_i.hpp \
+  /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../../../../git/notschool/Cinder/boost/boost/preprocessor/seq/for_each_product.hpp \
   ../../../../git/notschool/Cinder/boost/boost/preprocessor/seq/insert.hpp \
   ../../../../git/notschool/Cinder/boost/boost/preprocessor/seq/rest_n.hpp \
-  ../../../../git/notschool/Cinder/boost/boost/preprocessor/arithmetic/inc.hpp \
-  ../../../../git/notschool/Cinder/boost/boost/preprocessor/seq/detail/split.hpp \
+  /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../../../../git/notschool/Cinder/boost/boost/preprocessor/arithmetic/inc.hpp \
+  /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../../../../git/notschool/Cinder/boost/boost/preprocessor/seq/detail/split.hpp \
   ../../../../git/notschool/Cinder/boost/boost/preprocessor/seq/pop_back.hpp \
   ../../../../git/notschool/Cinder/boost/boost/preprocessor/seq/pop_front.hpp \
-  ../../../../git/notschool/Cinder/boost/boost/preprocessor/seq/push_back.hpp \
+  /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../../../../git/notschool/Cinder/boost/boost/preprocessor/seq/push_back.hpp \
   ../../../../git/notschool/Cinder/boost/boost/preprocessor/seq/push_front.hpp \
   ../../../../git/notschool/Cinder/boost/boost/preprocessor/seq/remove.hpp \
   ../../../../git/notschool/Cinder/boost/boost/preprocessor/seq/replace.hpp \
   ../../../../git/notschool/Cinder/boost/boost/preprocessor/seq/subseq.hpp \
   ../../../../git/notschool/Cinder/boost/boost/preprocessor/seq/to_array.hpp \
   ../../../../git/notschool/Cinder/boost/boost/preprocessor/seq/to_list.hpp \
-  ../../../../git/notschool/Cinder/boost/boost/preprocessor/punctuation/comma.hpp \
-  ../../../../git/notschool/Cinder/boost/boost/preprocessor/punctuation/paren.hpp \
+  /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../../../../git/notschool/Cinder/boost/boost/preprocessor/punctuation/comma.hpp \
+  /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../../../../git/notschool/Cinder/boost/boost/preprocessor/punctuation/paren.hpp \
   ../../../../git/notschool/Cinder/boost/boost/preprocessor/seq/detail/binary_transform.hpp \
   ../../../../git/notschool/Cinder/boost/boost/preprocessor/seq/to_tuple.hpp \
   ../../../../git/notschool/Cinder/boost/boost/preprocessor/seq/transform.hpp \
@@ -60,9 +60,9 @@ dependencies: \
   ../../../../git/notschool/Cinder/boost/boost/tuple/detail/tuple_basic.hpp \
   ../../../../git/notschool/Cinder/boost/boost/type_traits/cv_traits.hpp \
   ../../../../git/notschool/Cinder/boost/boost/type_traits/add_cv.hpp \
-  ../../../../git/notschool/Cinder/boost/boost/type_traits/detail/type_trait_def.hpp \
-  ../../../../git/notschool/Cinder/boost/boost/type_traits/detail/template_arity_spec.hpp \
-  ../../../../git/notschool/Cinder/boost/boost/type_traits/detail/type_trait_undef.hpp \
+  /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../../../../git/notschool/Cinder/boost/boost/type_traits/detail/type_trait_def.hpp \
+  /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../../../../git/notschool/Cinder/boost/boost/type_traits/detail/template_arity_spec.hpp \
+  /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../../../../git/notschool/Cinder/boost/boost/type_traits/detail/type_trait_undef.hpp \
   ../../../../git/notschool/Cinder/boost/boost/type_traits/remove_volatile.hpp \
   ../../../../git/notschool/Cinder/include/cinder/Arcball.h \
   ../../../../git/notschool/Cinder/include/cinder/MayaCamUI.h \
@@ -79,19 +79,19 @@ dependencies: \
   ../../../../git/notschool/Cinder/boost/boost/lexical_cast.hpp \
   ../../../../git/notschool/Cinder/boost/boost/detail/lcast_precision.hpp \
   ../../../../git/notschool/Cinder/boost/boost/array.hpp \
-  ../../../../git/notschool/Cinder/boost/boost/assert.hpp \
-  ../../../../git/notschool/Cinder/boost/boost/functional/hash_fwd.hpp \
+  /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../../../../git/notschool/Cinder/boost/boost/assert.hpp \
+  /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../../../../git/notschool/Cinder/boost/boost/functional/hash_fwd.hpp \
   ../../../../git/notschool/Cinder/boost/boost/numeric/conversion/cast.hpp \
   ../../../../git/notschool/Cinder/boost/boost/numeric/conversion/converter.hpp \
   ../../../../git/notschool/Cinder/boost/boost/numeric/conversion/conversion_traits.hpp \
   ../../../../git/notschool/Cinder/boost/boost/numeric/conversion/detail/conversion_traits.hpp \
   ../../../../git/notschool/Cinder/boost/boost/numeric/conversion/detail/meta.hpp \
   ../../../../git/notschool/Cinder/boost/boost/mpl/equal_to.hpp \
-  ../../../../git/notschool/Cinder/boost/boost/mpl/aux_/comparison_op.hpp \
-  ../../../../git/notschool/Cinder/boost/boost/mpl/aux_/numeric_op.hpp \
-  ../../../../git/notschool/Cinder/boost/boost/mpl/apply_wrap.hpp \
-  ../../../../git/notschool/Cinder/boost/boost/mpl/aux_/include_preprocessed.hpp \
-  ../../../../git/notschool/Cinder/boost/boost/preprocessor/stringize.hpp \
+  /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../../../../git/notschool/Cinder/boost/boost/mpl/aux_/comparison_op.hpp \
+  /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../../../../git/notschool/Cinder/boost/boost/mpl/aux_/numeric_op.hpp \
+  /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../../../../git/notschool/Cinder/boost/boost/mpl/apply_wrap.hpp \
+  /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../../../../git/notschool/Cinder/boost/boost/mpl/aux_/include_preprocessed.hpp \
+  /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../../../../git/notschool/Cinder/boost/boost/preprocessor/stringize.hpp \
   ../../../../git/notschool/Cinder/boost/boost/mpl/aux_/preprocessed/gcc/equal_to.hpp \
   ../../../../git/notschool/Cinder/boost/boost/numeric/conversion/detail/int_float_mixture.hpp \
   ../../../../git/notschool/Cinder/boost/boost/numeric/conversion/int_float_mixture_enum.hpp \
@@ -111,15 +111,15 @@ dependencies: \
   ../../../../git/notschool/Cinder/boost/boost/numeric/conversion/bounds.hpp \
   ../../../../git/notschool/Cinder/boost/boost/numeric/conversion/detail/bounds.hpp \
   ../../../../git/notschool/Cinder/boost/boost/numeric/conversion/numeric_cast_traits.hpp \
-  ../../../../git/notschool/Cinder/boost/boost/cstdint.hpp \
+  /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../../../../git/notschool/Cinder/boost/boost/cstdint.hpp \
   ../../../../git/notschool/Cinder/boost/boost/numeric/conversion/detail/numeric_cast_traits.hpp \
   ../../../../git/notschool/Cinder/boost/boost/numeric/conversion/detail/preprocessed/numeric_cast_traits_common.hpp \
   ../../../../git/notschool/Cinder/boost/boost/numeric/conversion/detail/preprocessed/numeric_cast_traits_long_long.hpp \
   ../../../../git/notschool/Cinder/boost/boost/type_traits/has_left_shift.hpp \
   ../../../../git/notschool/Cinder/boost/boost/type_traits/detail/has_binary_operator.hpp \
   ../../../../git/notschool/Cinder/boost/boost/type_traits/is_fundamental.hpp \
-  ../../../../git/notschool/Cinder/boost/boost/type_traits/detail/bool_trait_def.hpp \
-  ../../../../git/notschool/Cinder/boost/boost/type_traits/detail/bool_trait_undef.hpp \
+  /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../../../../git/notschool/Cinder/boost/boost/type_traits/detail/bool_trait_def.hpp \
+  /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../../../../git/notschool/Cinder/boost/boost/type_traits/detail/bool_trait_undef.hpp \
   ../../../../git/notschool/Cinder/boost/boost/type_traits/has_right_shift.hpp \
   ../../../../git/notschool/Cinder/boost/boost/math/special_functions/sign.hpp \
   ../../../../git/notschool/Cinder/boost/boost/math/tools/config.hpp \
@@ -134,10 +134,10 @@ dependencies: \
   ../../../../git/notschool/Cinder/boost/boost/mpl/aux_/contains_impl.hpp \
   ../../../../git/notschool/Cinder/boost/boost/mpl/find.hpp \
   ../../../../git/notschool/Cinder/boost/boost/mpl/remove_if.hpp \
-  ../../../../git/notschool/Cinder/boost/boost/mpl/apply.hpp \
+  /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../../../../git/notschool/Cinder/boost/boost/mpl/apply.hpp \
   ../../../../git/notschool/Cinder/boost/boost/mpl/vector.hpp \
   ../../../../git/notschool/Cinder/boost/boost/mpl/limits/vector.hpp \
-  ../../../../git/notschool/Cinder/boost/boost/preprocessor/inc.hpp \
+  /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../../../../git/notschool/Cinder/boost/boost/preprocessor/inc.hpp \
   ../../../../git/notschool/Cinder/boost/boost/mpl/vector/vector20.hpp \
   ../../../../git/notschool/Cinder/boost/boost/mpl/vector/vector10.hpp \
   ../../../../git/notschool/Cinder/boost/boost/mpl/vector/vector0.hpp \

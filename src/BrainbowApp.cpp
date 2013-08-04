@@ -65,10 +65,15 @@ private:
     //MISCVARS
     bool musicOn = false;
     bool gong = false;
+    bool shift2 = false;
     bool drawDiamond = true;
     float lightFade = 0;
+    float discOp = 0;
+    float diamondFade;
     
     int zshift = 0;
+    gl::Material discMaterial;
+    gl::Material sphereMaterial;
     
     //LEAP
 	uint32_t				mCallbackId;
@@ -90,8 +95,8 @@ private:
     SphereCloud mCloud;
     OBJs sphere;
     
-    //AUDIO    
-    AudioCont mAudio;
+    //AUDIO
+    //    AudioCont mAudio;
     
     float volume1;
     ci::Timer gongTimer;
@@ -107,23 +112,24 @@ void BrainbowApp::prepareSettings( Settings *settings )
 
 void BrainbowApp::setup()
 {
-    mAudio.setUp();
+    //    mAudio = AudioCont();
+    //    mAudio.setUp();
     
     // Set up OpenGL
     
 	gl::enableAlphaBlending();
 	gl::enableDepthRead();
 	gl::enableDepthWrite();
-
+    
     gongTimer.start();
     ballTimer.start();
     
     // LIGHTING
     //here
-  glPolygonOffset( 1.0f, 1.0f );
+    glPolygonOffset( 1.0f, 1.0f );
 	glEnable( GL_LIGHTING );
 	glEnable( GL_DEPTH_TEST );
-
+    
     
     mLight = new gl::Light( gl::Light::POINT, 0 );
 	mLight->lookAt( Vec3f( 1, 5, 1 ), Vec3f (getWindowWidth(), getWindowHeight() * 0.5f, 0.0f ));
@@ -138,7 +144,7 @@ void BrainbowApp::setup()
     //LOAD SHAPES
     colorSat = 1.0f;
     
-    gl::Material sphereMaterial;
+    
 	sphereMaterial.setSpecular( ColorA(colorSat-0.3f, colorSat, colorSat, .4f ) );
 	sphereMaterial.setDiffuse( ColorA(colorSat-0.3f, colorSat, colorSat, .4f ) );
 	sphereMaterial.setAmbient( ColorA(colorSat-0.3f, colorSat, colorSat, .05f ) );
@@ -159,7 +165,7 @@ void BrainbowApp::setup()
 	curMaterial.setShininess( 600.0f );
     curMaterial.setEmission(ColorA(1, 1, 1, 1 ));
     
-    gl::Material discMaterial;
+    
 	discMaterial.setSpecular( ColorA(colorSat-0.3f, colorSat, colorSat, .4f ) );
 	discMaterial.setDiffuse( ColorA(colorSat-0.3f, colorSat, colorSat, .4f ) );
 	discMaterial.setAmbient( ColorA(colorSat-0.3f, colorSat, colorSat, .05f ) );
@@ -168,7 +174,8 @@ void BrainbowApp::setup()
     
     initShadowMap();
     
-    mCloud = SphereCloud(0, 100);
+    mCloud = SphereCloud(0, 70);
+    mCloud.addSphere();
     
     mSphere = gl::DisplayList( GL_COMPILE );
     mSphere.newList();
@@ -186,14 +193,14 @@ void BrainbowApp::setup()
     
     mCur = gl::DisplayList( GL_COMPILE );
     mCur.newList();
-    gl::drawSphere(Vec3f(0, 0, 0), 50);
+    gl::drawSphere(Vec3f(0, 0, 0), 3);
     mCur.endList();
     mCur.setMaterial(curMaterial);
     
     mDisc = gl::DisplayList( GL_COMPILE );
     mDisc.newList();
     //    mCloud.draw();
-    gl::drawSolidCircle(Vec2f(640, 400), 60, 6);
+    gl::drawSolidCircle(Vec2f(0, 0), 60, 6);
     mDisc.endList();
     mDisc.setMaterial( discMaterial );
     
@@ -203,15 +210,15 @@ void BrainbowApp::setup()
 	
 	// START LEAP
 	mLeap 		= LeapSdk::Device::create();
-	mCallbackId = mLeap->addCallback( &BrainbowApp::onFrame, this );   
+	mCallbackId = mLeap->addCallback( &BrainbowApp::onFrame, this );
     
     
     mShader = gl::GlslProg( loadResource( RES_SHADOWMAP_VERT ), loadResource( RES_SHADOWMAP_FRAG ) );
 	mShader.bind();
 	mShader.uniform( "depthTexture", 0 );
     
-    sphere = OBJs("sphere.obj", "purpleflower.png");
-    myImage = gl::Texture( loadImage( loadResource( "purpleflower.png" ) ) );
+//    sphere = OBJs("sphere.obj", "purpleflower.png");
+//    myImage = gl::Texture( loadImage( loadResource( "purpleflower.png" ) ) );
     
 }
 
@@ -231,15 +238,26 @@ void BrainbowApp::draw()
     
     //    mLight->update( *mCamera );
     if (mHands.empty())
-        mLight->disable();    
+        mLight->disable();
     
     updateShadowMap();
     
     gl::enableDepthRead();
-    gl::enableDepthWrite();    
-
-    glEnable( GL_TEXTURE_2D );  
+    gl::enableDepthWrite();
+    
+    //    //cursor:
+    mShader.bind();
+    
+    glEnable( GL_TEXTURE_2D );
 	mDepthFbo.bindDepthTexture();
+    
+    //    glPushMatrix();
+    //    glTranslated( scaledX, scaledY, scaledZ);
+    //    gl::draw(sphere.getVBO());
+    //    //    gl::color(1, 1, 1);
+    //    //    gl::drawSphere(Vec3f(0,0,0), 20);
+    //    glPopMatrix();
+    
     mShader.bind();
     
     
@@ -254,21 +272,16 @@ void BrainbowApp::draw()
     //    glPopMatrix();
     
     
-    
-//    myImage.bind();
-    mShader.bind(); 
+    // disc
     glPushMatrix();
-    glTranslated( scaledX, scaledY, scaledZ);
-    gl::draw(sphere.getVBO());
-    glPopMatrix();
-//       
-    
-    glPushMatrix();
-    glTranslated( 0, 0, zshift - 200);
+    glTranslated( 640, 400, zshift - 200);
+    if (shift2 && discOp > 1)
+        glScalef(discOp, discOp, 0);
+    cout << discOp << endl;
     mDisc.draw();
     glPopMatrix();
     
-    //cursor
+    //cloud
     glPushMatrix();
     glTranslated( getWindowWidth() * 0.5f, getWindowHeight() * 0.5f, zshift );
     //    if (lightFade > .45f)
@@ -284,6 +297,8 @@ void BrainbowApp::draw()
     
     mShader.unbind();
     mDepthFbo.unbindTexture();
+    
+    
 }
 
 void BrainbowApp::onFrame( LeapSdk::Frame frame )
@@ -330,9 +345,9 @@ void BrainbowApp::updateShadowMap()
 //
 void BrainbowApp::keyDown( ci::app::KeyEvent event )
 {
-//	if( event.getChar() == 'l') {
-//		mLight->disable();
-//    }
+    //	if( event.getChar() == 'l') {
+    //		mLight->disable();
+    //    }
 }
 
 void BrainbowApp::shutdown()
@@ -360,15 +375,15 @@ void BrainbowApp::update()
         handPos = Vec3f(scaledX, scaledY, scaledZ);
     }
     
-//    double sinSecs = sin (getElapsedSeconds());
+    //    double sinSecs = sin (getElapsedSeconds());
     //    double cosSecs = cos (getElapsedSeconds());
     
     //AUDIO
-    mAudio.update();
-
-
+    //    mAudio.update();
+    
+    
     //SCENES
-    intro();   
+    intro();
     
     //LIGHT
     
@@ -383,27 +398,27 @@ void BrainbowApp::update()
     
 }
 
-void BrainbowApp::intro(){
-    if (!musicOn && getElapsedSeconds() > 2){
-        mAudio.playTraz("lowdrone");
-        musicOn = true;
-    }
+void BrainbowApp::intro(){   
     
-//    //addspheres
-//    if (lightFade >= 0.45f && ballTimer.getSeconds() > 0.2f && mCloud.getNumber() < 20){
-//        mCloud.addSphere();
-//        ballTimer = 0;
-//        ballTimer.start();
-//    }
-//    else if (lightFade >= 0.45f && ballTimer.getSeconds() > 1.0f && mCloud.getNumber() < 600 && !gong){
-//        mCloud.addSphere();
-//        ballTimer = 0;
-//        ballTimer.start();
-//    }
-//    
-    //INTO DIAMOND
+    if (!musicOn && getElapsedSeconds() > 2){
+        //        mAudio.playTraz("lowdrone");
+        musicOn = true;    }
+    
+    //    //addspheres
+    if (lightFade >= 0.45f && ballTimer.getSeconds() > 0.2f && mCloud.getNumber() < 20){
+        mCloud.addSphere();
+        ballTimer = 0;
+        ballTimer.start();
+    }
+    else if (lightFade >= 0.45f && ballTimer.getSeconds() > 1.0f && mCloud.getNumber() < 600 && !gong){
+        mCloud.addSphere();
+        ballTimer = 0;
+        ballTimer.start();
+    }
+    //
+    //into diamond
     if (gongTimer.getSeconds()>1 && scaledZ < 290 && scaledZ > 100 && !gong && getElapsedSeconds() > 0){
-        mAudio.playTraz("activate");
+        //        mAudio.playTraz("activate");
         mCloud.addSphere();
         gong = true;
         //        mAudio.playTraz("middrone");
@@ -412,14 +427,38 @@ void BrainbowApp::intro(){
     }
     
     if (gong && zshift < 500 ){
-//        zshift++;
-//        scaledZ += zshift;
+        //        zshift = 1;
+        zshift++;
+        scaledZ += zshift;
     }
-//    if (mCloud.getNumber() < 300 && ballTimer.getSeconds() > 0.1f && gong && zshift > 0){
-//        mCloud.addSphere();
-//        ballTimer = 0;
-//        ballTimer.start();
-//    }    
+    if (mCloud.getNumber() < 200 && ballTimer.getSeconds() > 0.1f && gong && zshift > 0){
+        mCloud.addSphere();
+        ballTimer = 0;
+        ballTimer.start();
+    }
+    
+    if ((mCloud.getHexClear() || shift2) && getElapsedSeconds() > 10 && zshift < 720){
+//        if (getElapsedSeconds() > 10 && zshift < 720){
+        shift2 = true;
+        zshift++;
+        scaledZ += zshift;
+            discMaterial.setSpecular( ColorA(colorSat, colorSat, colorSat, .4f + discOp ) );
+            discMaterial.setDiffuse( ColorA(colorSat, colorSat, colorSat, .4f + discOp) );
+            discMaterial.setAmbient( ColorA(colorSat, colorSat, colorSat, .05f ) );
+            discMaterial.setShininess( 600.0f );
+            discMaterial.setEmission(ColorA(1, 1, 1, 1 ));
+            mDisc.setMaterial( discMaterial );
+            
+            discOp += .01;
+            if (zshift > 650){
+                diamondFade += .005;
+                sphereMaterial.setSpecular( ColorA(colorSat-0.3f, colorSat, colorSat, .4f-diamondFade ) );
+                sphereMaterial.setDiffuse( ColorA(colorSat-0.3f, colorSat, colorSat, .4f-diamondFade ) );
+                sphereMaterial.setAmbient( ColorA(colorSat-0.3f, colorSat, colorSat, .05f-diamondFade ) );
+                mSphere.setMaterial( sphereMaterial );
+//                drawDiamond = false;
+            }
+    }
 }
 
 
