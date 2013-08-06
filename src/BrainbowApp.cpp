@@ -2,6 +2,7 @@
 #include "SphereCloud.h"
 #include "AudioCont.h"
 #include "OBJs.h"
+#include "Cube.h"
 
 
 #include "cinder/app/AppNative.h"
@@ -46,7 +47,8 @@ public:
     void keyDown( KeyEvent event );
     void initShadowMap();
 	void updateShadowMap();
-    void intro();
+    void scene1();
+    void scene2();
     
     gl::GlslProg		mShader;
     
@@ -67,9 +69,13 @@ private:
     bool gong = false;
     bool shift2 = false;
     bool drawDiamond = true;
+    bool newLight = false;
+    bool sceneOne;
+    bool sceneTwo;
     float lightFade = 0;
     float discOp = 0;
     float diamondFade;
+    Vec3f screenCol;
     
     int zshift = 0;
     gl::Material discMaterial;
@@ -93,6 +99,7 @@ private:
     //OBJECTS
     
     SphereCloud mCloud;
+    Cube mCube;
     OBJs sphere;
     
     //AUDIO
@@ -114,6 +121,10 @@ void BrainbowApp::setup()
 {
     //    mAudio = AudioCont();
     //    mAudio.setUp();
+    
+    // start scene1
+    sceneOne = true;
+    sceneTwo = false;
     
     // Set up OpenGL
     
@@ -217,8 +228,8 @@ void BrainbowApp::setup()
 	mShader.bind();
 	mShader.uniform( "depthTexture", 0 );
     
-//    sphere = OBJs("sphere.obj", "purpleflower.png");
-//    myImage = gl::Texture( loadImage( loadResource( "purpleflower.png" ) ) );
+    //    sphere = OBJs("sphere.obj", "purpleflower.png");
+    //    myImage = gl::Texture( loadImage( loadResource( "purpleflower.png" ) ) );
     
 }
 
@@ -230,13 +241,20 @@ void BrainbowApp::draw()
     // changes every 12.5 seconds
     float gray = (cos(getElapsedSeconds()/4)*.3)/2 ;
     float otherCol = (sin(getElapsedSeconds()/4)*.2)/2;
-    gl::clear( Color(lightFade+gray, lightFade, (lightFade*2)-otherCol ) );
     
+    screenCol = Vec3f (lightFade+gray, lightFade, (lightFade*2)-otherCol);
+    
+    if (sceneOne)
+        gl::clear( Color(lightFade+gray, lightFade, (lightFade*2)-otherCol) );
+    if (sceneTwo)
+        gl::clear( Color(1, 1, 1) );
+
+    
+    // FADE IN INTRO
     if (lightFade < .5){
         lightFade += .0005;
     }
     
-    //    mLight->update( *mCamera );
     if (mHands.empty())
         mLight->disable();
     
@@ -244,61 +262,56 @@ void BrainbowApp::draw()
     
     gl::enableDepthRead();
     gl::enableDepthWrite();
-    
-    //    //cursor:
     mShader.bind();
-    
     glEnable( GL_TEXTURE_2D );
 	mDepthFbo.bindDepthTexture();
-    
-    //    glPushMatrix();
-    //    glTranslated( scaledX, scaledY, scaledZ);
-    //    gl::draw(sphere.getVBO());
-    //    //    gl::color(1, 1, 1);
-    //    //    gl::drawSphere(Vec3f(0,0,0), 20);
-    //    glPopMatrix();
-    
     mShader.bind();
-    
-    
-    //	mShader.uniform( "shadowTransMatrix", mLight->getShadowTransformationMatrix( *mCamera ) );
     
     // SHAPES
     
-    //cyl
-    //    glPushMatrix();
-    //    glTranslated( getWindowWidth() * 0.5f, getWindowHeight() * 0.5f, 0.0f );
-    //    mCyl.draw();
-    //    glPopMatrix();
-    
-    
-    // disc
-    glPushMatrix();
-    glTranslated( 640, 400, zshift - 200);
-    if (shift2 && discOp > 1)
-        glScalef(discOp, discOp, 0);
-    cout << discOp << endl;
-    mDisc.draw();
-    glPopMatrix();
-    
-    //cloud
-    glPushMatrix();
-    glTranslated( getWindowWidth() * 0.5f, getWindowHeight() * 0.5f, zshift );
-    //    if (lightFade > .45f)
-    mCloud.update(scaledX, scaledY, scaledZ);
-    glPopMatrix();
-    
-    if (drawDiamond){
+    if (sceneOne){        
+        //cyl
+        //    glPushMatrix();
+        //    glTranslated( getWindowWidth() * 0.5f, getWindowHeight() * 0.5f, 0.0f );
+        //    mCyl.draw();
+        //    glPopMatrix();
+        
+        // disc
         glPushMatrix();
-        glTranslated( getWindowWidth() * 0.5f, getWindowHeight() * 0.5f, zshift);
-        mSphere.draw();
+        glTranslated( 640, 400, zshift - 200);
+        if (shift2 && discOp > 1)
+            glScalef(discOp, discOp, 0);
+        //    cout << discOp << endl;
+        mDisc.draw();
+        glPopMatrix();
+        
+        //cloud
+        glPushMatrix();
+        glTranslated( getWindowWidth() * 0.5f, getWindowHeight() * 0.5f, zshift );
+        //    if (lightFade > .45f)
+        mCloud.update(scaledX, scaledY, scaledZ, diamondFade);
+        glPopMatrix();
+        
+        if (drawDiamond){
+            glPushMatrix();
+            glTranslated( getWindowWidth() * 0.5f, getWindowHeight() * 0.5f, zshift);
+            mSphere.draw();
+            glPopMatrix();
+        }
+    }
+    
+    if (sceneTwo){
+        glPushMatrix();
+        glTranslatef(Vec3f(400, 400, 300));
+        mCube.update(.01f, screenCol*2);
         glPopMatrix();
     }
     
     mShader.unbind();
     mDepthFbo.unbindTexture();
     
-    
+    //    writeImage( getHomeDirectory() / ("image_" + toString( getElapsedFrames() ) + ".png"), copyWindowSurface() );
+	
 }
 
 void BrainbowApp::onFrame( LeapSdk::Frame frame )
@@ -383,7 +396,11 @@ void BrainbowApp::update()
     
     
     //SCENES
-    intro();
+    if (sceneOne)
+        scene1();
+    if (sceneTwo)
+        scene2();
+    
     
     //LIGHT
     
@@ -398,7 +415,7 @@ void BrainbowApp::update()
     
 }
 
-void BrainbowApp::intro(){   
+void BrainbowApp::scene1(){
     
     if (!musicOn && getElapsedSeconds() > 2){
         //        mAudio.playTraz("lowdrone");
@@ -437,28 +454,51 @@ void BrainbowApp::intro(){
         ballTimer.start();
     }
     
-    if ((mCloud.getHexClear() || shift2) && getElapsedSeconds() > 10 && zshift < 720){
-//        if (getElapsedSeconds() > 10 && zshift < 720){
+    //    cout << "x: " << scaledX << endl;
+    //    cout << "y: " << scaledY << endl;
+    //    cout << "z: " << scaledZ << endl;
+    if ((mCloud.getHexClear() || shift2) && getElapsedSeconds() > 10 && zshift < 750){
+        //        if (getElapsedSeconds() > 10 && zshift < 720){
         shift2 = true;
         zshift++;
         scaledZ += zshift;
-            discMaterial.setSpecular( ColorA(colorSat, colorSat, colorSat, .4f + discOp ) );
-            discMaterial.setDiffuse( ColorA(colorSat, colorSat, colorSat, .4f + discOp) );
-            discMaterial.setAmbient( ColorA(colorSat, colorSat, colorSat, .05f ) );
-            discMaterial.setShininess( 600.0f );
-            discMaterial.setEmission(ColorA(1, 1, 1, 1 ));
-            mDisc.setMaterial( discMaterial );
+        discMaterial.setSpecular( ColorA(colorSat, colorSat, colorSat, .4f + discOp ) );
+        discMaterial.setDiffuse( ColorA(colorSat, colorSat, colorSat, .4f + discOp) );
+        discMaterial.setAmbient( ColorA(colorSat, colorSat, colorSat, .05f ) );
+        discMaterial.setShininess( 600.0f );
+        discMaterial.setEmission(ColorA(1, 1, 1, 1 ));
+        mDisc.setMaterial( discMaterial );
+        
+        discOp += .01;
+        if (zshift > 650){
             
-            discOp += .01;
-            if (zshift > 650){
-                diamondFade += .005;
-                sphereMaterial.setSpecular( ColorA(colorSat-0.3f, colorSat, colorSat, .4f-diamondFade ) );
-                sphereMaterial.setDiffuse( ColorA(colorSat-0.3f, colorSat, colorSat, .4f-diamondFade ) );
-                sphereMaterial.setAmbient( ColorA(colorSat-0.3f, colorSat, colorSat, .05f-diamondFade ) );
-                mSphere.setMaterial( sphereMaterial );
-//                drawDiamond = false;
-            }
+            diamondFade += .005;
+            sphereMaterial.setSpecular( ColorA(colorSat-0.3f, colorSat, colorSat, .4f-diamondFade ) );
+            sphereMaterial.setDiffuse( ColorA(colorSat-0.3f, colorSat, colorSat, .4f-diamondFade ) );
+            sphereMaterial.setAmbient( ColorA(colorSat-0.3f, colorSat, colorSat, .05f-diamondFade ) );
+            mSphere.setMaterial( sphereMaterial );
+            //                drawDiamond = false;
+        }
     }
+    if (zshift >= 750 && scaledZ > 700 && scaledY < 450 && scaledY > 320 && scaledX <685 && scaledX > 590){
+        sceneOne = false;
+        sceneTwo = true;
+        zshift = 0;
+        mCube = Cube(Vec3f (640, 400, 0), screenCol);
+    }
+}
+
+void BrainbowApp::scene2(){
+    if (newLight = false){
+    mLight = new gl::Light( gl::Light::POINT, 0 );
+	mLight->lookAt( Vec3f( 1, 5, 1 ), Vec3f (getWindowWidth(), getWindowHeight() * 0.5f, 0.0f ));
+    mLight->setAmbient( Color( 0.3f, 0.3f, 0.3f ) );
+	mLight->setDiffuse( Color( 1.0f, 1.0f, 1.0f ) );
+	mLight->setSpecular( Color( 1.0f, 1.0f, 1.0f ) );
+	mLight->setShadowParams( 60.0f, 0.5f, 8.0f );
+        newLight = true;
+    }
+    
 }
 
 

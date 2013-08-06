@@ -61,7 +61,7 @@ void SphereCloud::addSphere(){
     testLoc = Vec3f(x, y, z);
 }
 
-void SphereCloud::update(float x, float y, float z){
+void SphereCloud::update(float x, float y, float z, float fade){
     int i = 0;
     double elSecs = getElapsedSeconds();
     hexClear = true;
@@ -94,6 +94,15 @@ void SphereCloud::update(float x, float y, float z){
             && shiftBally > 360 && shiftBally < 440){
             hexClear = false;
         }
+        if (fade != 0){
+        ballMaterial.setSpecular( ColorA(1, 1-0.5f, 1, .3f - fade) );
+        ballMaterial.setDiffuse( ColorA(1, 1-0.5f, 1, .3f - fade) );
+        ballMaterial.setAmbient( ColorA(1, 1-0.5f, 1, .05f - fade ) );
+        ballMaterial.setShininess( 600.0f );
+        ballMaterial.setEmission(ColorA(1, 1, 1, 1 ));
+            sphereDL->setMaterial(ballMaterial);
+        }
+        
         sphereDL->draw();
         i++;
     }

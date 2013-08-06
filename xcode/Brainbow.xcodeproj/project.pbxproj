@@ -54,6 +54,7 @@
 		C672761B74024B839D2E18D2 /* b2WheelJoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 256462EC4C05468F905AC2F3 /* b2WheelJoint.cpp */; };
 		C81E92D2A8BF4E0EA8630871 /* b2TimeOfImpact.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DEFB0A1A69904E39A9B789AC /* b2TimeOfImpact.cpp */; };
 		C9A698F5FD724A73993D7378 /* b2GearJoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE9922DB393A4CE494A4A0FA /* b2GearJoint.cpp */; };
+		D21E46E417B0C40B001B9272 /* Cube.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D21E46E217B0C40B001B9272 /* Cube.cpp */; };
 		D28A10F717A227F5001872DA /* leapsyc.wav in Resources */ = {isa = PBXBuildFile; fileRef = D28A10F617A227F5001872DA /* leapsyc.wav */; };
 		D28A10FF17A254CF001872DA /* gang.wav in Resources */ = {isa = PBXBuildFile; fileRef = D28A10FE17A254CF001872DA /* gang.wav */; };
 		D28A110217A4722C001872DA /* AudioCont.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D28A110017A4722C001872DA /* AudioCont.cpp */; };
@@ -181,6 +182,8 @@
 		C545058DBF00441587BAEC9E /* Cinder-LeapSdk.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = "Cinder-LeapSdk.cpp"; path = "../blocks/LeapMotion/src/Cinder-LeapSdk.cpp"; sourceTree = "<group>"; };
 		CADC31F6518245979CC05A3F /* b2Math.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = b2Math.cpp; path = ../blocks/Box2D/src/Box2D/Common/b2Math.cpp; sourceTree = "<group>"; };
 		CB8F13DB7F1F48C48F222710 /* b2DynamicTree.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = b2DynamicTree.cpp; path = ../blocks/Box2D/src/Box2D/Collision/b2DynamicTree.cpp; sourceTree = "<group>"; };
+		D21E46E217B0C40B001B9272 /* Cube.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Cube.cpp; sourceTree = "<group>"; };
+		D21E46E317B0C40B001B9272 /* Cube.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cube.h; sourceTree = "<group>"; };
 		D2881176F2624A6E95884914 /* b2ChainAndPolygonContact.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = b2ChainAndPolygonContact.cpp; path = ../blocks/Box2D/src/Box2D/Dynamics/Contacts/b2ChainAndPolygonContact.cpp; sourceTree = "<group>"; };
 		D28A10F617A227F5001872DA /* leapsyc.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = leapsyc.wav; path = ../resources/leapsyc.wav; sourceTree = "<group>"; };
 		D28A10FE17A254CF001872DA /* gang.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = gang.wav; path = ../resources/gang.wav; sourceTree = "<group>"; };
@@ -275,8 +278,9 @@
 			isa = PBXGroup;
 			children = (
 				D6FF6AC2C6E3445C915D8319 /* BrainbowApp.cpp */,
-				D28A110017A4722C001872DA /* AudioCont.cpp */,
 				D28A110917A65340001872DA /* SphereCloud.cpp */,
+				D28A110017A4722C001872DA /* AudioCont.cpp */,
+				D21E46E217B0C40B001B9272 /* Cube.cpp */,
 				D28A110E17A8EEE7001872DA /* OBJs.cpp */,
 			);
 			name = Source;
@@ -330,11 +334,12 @@
 		29B97315FDCFA39411CA2CEA /* Headers */ = {
 			isa = PBXGroup;
 			children = (
-				D28A110F17A8EEE7001872DA /* OBJs.h */,
+				50DF481DC0A749FBB3F4D928 /* Brainbow_Prefix.pch */,
 				D28A110A17A65340001872DA /* SphereCloud.h */,
 				D28A110117A4722C001872DA /* AudioCont.h */,
+				D21E46E317B0C40B001B9272 /* Cube.h */,
+				D28A110F17A8EEE7001872DA /* OBJs.h */,
 				169425A00F3C4AF48EC30EF8 /* Resources.h */,
-				50DF481DC0A749FBB3F4D928 /* Brainbow_Prefix.pch */,
 			);
 			name = Headers;
 			sourceTree = "<group>";
@@ -721,6 +726,7 @@
 				D28A110217A4722C001872DA /* AudioCont.cpp in Sources */,
 				D28A110B17A65340001872DA /* SphereCloud.cpp in Sources */,
 				D28A111017A8EEE7001872DA /* OBJs.cpp in Sources */,
+				D21E46E417B0C40B001B9272 /* Cube.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
