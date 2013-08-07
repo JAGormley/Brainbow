@@ -49,6 +49,7 @@ public:
     bool getHexClear();
     Vec3f getLocation();
     Vec3f repel(Vec3f shiftedBall, Vec3f hand, int i);
+    void clear();
 
     
 };

@@ -72,6 +72,7 @@ dependencies: \
   ../../../../git/notschool/Cinder/include/cinder/gl/Vbo.h \
   ../../../../git/notschool/Cinder/include/cinder/gl/Texture.h \
   /Users/andrewjgormley/Documents/jams/Brainbow/xcode/Cube.h \
+  /Users/andrewjgormley/Documents/jams/Brainbow/xcode/Target.h \
   ../../../../git/notschool/Cinder/include/cinder/app/AppNative.h \
   /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../blocks/LeapMotion/src/Cinder-LeapSdk.h \
   ../blocks/LeapMotion/src/Leap.h ../blocks/LeapMotion/src/LeapMath.h \

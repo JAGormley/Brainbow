@@ -3,6 +3,7 @@
 #include "AudioCont.h"
 #include "OBJs.h"
 #include "Cube.h"
+#include "Target.h"
 
 
 #include "cinder/app/AppNative.h"
@@ -47,18 +48,25 @@ public:
     void keyDown( KeyEvent event );
     void initShadowMap();
 	void updateShadowMap();
+    void addCube(float x, float y, float z);
+    void addTarget (Vec3f loc);
     void scene1();
     void scene2();
     
     gl::GlslProg		mShader;
     
-    cinder::gl::DisplayList         mSphere, mDisc, mCur;
+    cinder::gl::DisplayList         mSphere, mDisc, mCur, mCyl;
     ci::Timer timer;
     ci::Timer ballTimer;
     gl::Light			*mLight;
     CameraPersp			*mCamera;
     gl::Fbo				mDepthFbo;
     gl::Texture         myImage;
+    vector<Cube> cubes;
+    Cube tempCube;
+    vector<Target> targets;
+    Target tempTarget;
+    
     
 private:
     
@@ -70,6 +78,8 @@ private:
     bool shift2 = false;
     bool drawDiamond = true;
     bool newLight = false;
+    bool newCloud = false;
+    bool targetFilled = false;
     bool sceneOne;
     bool sceneTwo;
     float lightFade = 0;
@@ -107,6 +117,7 @@ private:
     
     float volume1;
     ci::Timer gongTimer;
+    ci::Timer cubeTimer;
     
     
 };
@@ -155,24 +166,23 @@ void BrainbowApp::setup()
     //LOAD SHAPES
     colorSat = 1.0f;
     
-    
 	sphereMaterial.setSpecular( ColorA(colorSat-0.3f, colorSat, colorSat, .4f ) );
 	sphereMaterial.setDiffuse( ColorA(colorSat-0.3f, colorSat, colorSat, .4f ) );
 	sphereMaterial.setAmbient( ColorA(colorSat-0.3f, colorSat, colorSat, .05f ) );
 	sphereMaterial.setShininess( 1.0f );
     
-    //    sphereMaterial.setEmission(ColorA(1, 1, 1, 1 ));
-    //    gl::Material cylMaterial;
-    //    cylMaterial.setSpecular( ColorA(0, 1.0f, 1.0f, .2f ));
-    //	cylMaterial.setDiffuse( ColorA(0, 1.0f, 1.0f, .2f ) );
-    //	cylMaterial.setAmbient( ColorA(0, 1.0f, 1.0f, .2f ) );
-    //	cylMaterial.setShininess( 600.0f );
-    //    cylMaterial.setEmission(ColorA(1, 1, 1, 1 ));
+    sphereMaterial.setEmission(ColorA(1, 1, 1, 1 ));
+    gl::Material cylMaterial;
+    cylMaterial.setSpecular( ColorA(0, 1.0f, 1.0f, .2f ));
+	cylMaterial.setDiffuse( ColorA(0, 1.0f, 1.0f, .2f ) );
+	cylMaterial.setAmbient( ColorA(0, 1.0f, 1.0f, .2f ) );
+	cylMaterial.setShininess( 600.0f );
+    cylMaterial.setEmission(ColorA(1, 1, 1, 1 ));
     
     gl::Material curMaterial;
-    curMaterial.setSpecular( ColorA(1, 1.0f, 1.0f, .1f ));
-	curMaterial.setDiffuse( ColorA(1, 1.0f, 1.0f, .1f ) );
-	curMaterial.setAmbient( ColorA(1, 1.0f, 1.0f, .0f ) );
+    curMaterial.setSpecular( ColorA(1, .5, 0, .5f ));
+	curMaterial.setDiffuse( ColorA(1, .5, 0, .5f ) );
+	curMaterial.setAmbient( ColorA(1, 1.0f, 1.0f, .05f ) );
 	curMaterial.setShininess( 600.0f );
     curMaterial.setEmission(ColorA(1, 1, 1, 1 ));
     
@@ -194,17 +204,16 @@ void BrainbowApp::setup()
     mSphere.endList();
     mSphere.setMaterial( sphereMaterial );
     
-    //    mCyl = gl::DisplayList( GL_COMPILE );
-    //    mCyl.newList();
-    //    //    gl::drawCylinder(200, 200, 200);
-    //    gl::lineWidth(400);
-    //    gl::drawColorCube(Vec3f(0, 0, 0), Vec3f(300, 300, 300));
-    //    mCyl.endList();
-    //    mCyl.setMaterial(cylMaterial);
+    mCyl = gl::DisplayList( GL_COMPILE );
+    mCyl.newList();
+    //    gl::drawCylinder(200, 200, 200);
+    gl::drawColorCube(Vec3f(0, 0, 0), Vec3f(300, 300, 300));
+    mCyl.endList();
+    mCyl.setMaterial(cylMaterial);
     
     mCur = gl::DisplayList( GL_COMPILE );
     mCur.newList();
-    gl::drawSphere(Vec3f(0, 0, 0), 3);
+    gl::drawSphere(Vec3f(0, 0, 0), 5);
     mCur.endList();
     mCur.setMaterial(curMaterial);
     
@@ -248,7 +257,7 @@ void BrainbowApp::draw()
         gl::clear( Color(lightFade+gray, lightFade, (lightFade*2)-otherCol) );
     if (sceneTwo)
         gl::clear( Color(1, 1, 1) );
-
+    
     
     // FADE IN INTRO
     if (lightFade < .5){
@@ -269,12 +278,15 @@ void BrainbowApp::draw()
     
     // SHAPES
     
-    if (sceneOne){        
-        //cyl
-        //    glPushMatrix();
-        //    glTranslated( getWindowWidth() * 0.5f, getWindowHeight() * 0.5f, 0.0f );
-        //    mCyl.draw();
-        //    glPopMatrix();
+    //cyl
+    //    glPushMatrix();
+    //    glTranslated( scaledX, scaledY, scaledZ-400 );
+    //    mCyl.draw();
+    //    glPopMatrix();
+    
+    
+    // FIRST SCENE
+    if (sceneOne){
         
         // disc
         glPushMatrix();
@@ -300,10 +312,53 @@ void BrainbowApp::draw()
         }
     }
     
+    // SECOND SCENE
     if (sceneTwo){
+        
+        mLight->lookAt( Vec3f(scaledX, scaledY, scaledZ +200), Vec3f (getWindowWidth()*.05, getWindowHeight() * 0.5f, 0.0f ));
+        
+        // cursor
         glPushMatrix();
-        glTranslatef(Vec3f(400, 400, 300));
-        mCube.update(.01f, screenCol*2);
+        glTranslated( scaledX, scaledY, scaledZ );
+        mCur.draw();
+        
+        if (scaledZ < 375 && scaledZ > 350)
+            gl::drawSphere(Vec3f(0,0,0), (scaledZ-350)*.4);
+        if (scaledZ >= 375)
+            gl::drawSphere(Vec3f(0,0,0), 25*.4);
+        glPopMatrix();
+        
+        
+            // rotate whole scene; implement this
+//        if (targetFilled){
+//            glPushMatrix();
+//            glRotatef(getElapsedSeconds()*10, Vec3f (640, 400, 350) );
+//        }
+            for (int i = 0; i < cubes.size() ; i++){
+                glPushMatrix();
+                glTranslatef(cubes[i].getLocation());
+                cubes[i].update(.01f, screenCol);
+                glPopMatrix();
+            }
+            
+            for (int i = 0; i < targets.size() ; i++){
+                glPushMatrix();
+                glTranslatef(targets[i].getLocation());
+                targets[i].update(.01f, handPos, screenCol);
+                if (targets[i].getBoxed() && targets[i].getBoxNumber() < 15 ){
+                    addCube(targets[i].getLocation().x, targets[i].getLocation().y, targets[i].getLocation().z);
+                    targets[i].addBox();
+                }                
+                glPopMatrix();
+            }
+//        if (targetFilled)
+//            glPopMatrix();
+//        
+        
+        //cloud
+        glPushMatrix();
+        glTranslated( getWindowWidth() * 0.5f, getWindowHeight() * 0.5f, zshift );
+        mCloud.update(0, 0, 0, 0);
         glPopMatrix();
     }
     
@@ -371,7 +426,6 @@ void BrainbowApp::shutdown()
 
 void BrainbowApp::update()
 {
-    
     //LEAP
     if ( mLeap && mLeap->isConnected() ) {
 		mLeap->update();
@@ -387,9 +441,6 @@ void BrainbowApp::update()
         scaledZ = hand.getPosition().z*2+300;
         handPos = Vec3f(scaledX, scaledY, scaledZ);
     }
-    
-    //    double sinSecs = sin (getElapsedSeconds());
-    //    double cosSecs = cos (getElapsedSeconds());
     
     //AUDIO
     //    mAudio.update();
@@ -483,22 +534,60 @@ void BrainbowApp::scene1(){
     if (zshift >= 750 && scaledZ > 700 && scaledY < 450 && scaledY > 320 && scaledX <685 && scaledX > 590){
         sceneOne = false;
         sceneTwo = true;
+        
         zshift = 0;
-        mCube = Cube(Vec3f (640, 400, 0), screenCol);
     }
 }
 
 void BrainbowApp::scene2(){
-    if (newLight = false){
-    mLight = new gl::Light( gl::Light::POINT, 0 );
-	mLight->lookAt( Vec3f( 1, 5, 1 ), Vec3f (getWindowWidth(), getWindowHeight() * 0.5f, 0.0f ));
-    mLight->setAmbient( Color( 0.3f, 0.3f, 0.3f ) );
-	mLight->setDiffuse( Color( 1.0f, 1.0f, 1.0f ) );
-	mLight->setSpecular( Color( 1.0f, 1.0f, 1.0f ) );
-	mLight->setShadowParams( 60.0f, 0.5f, 8.0f );
+    //    cout << "x: " << scaledX << endl;
+    //    cout << "y: " << scaledY << endl;
+    //    cout << "z: " << scaledZ << endl;
+    
+    if (!newLight){
+        mCloud.clear();
+        mLight->setAmbient( Color( 0.0f, 0.0f, 0.0f ) );
+        mLight->setDiffuse( Color( 1.0f, 1.0f, 1.0f ) );
+        mLight->setSpecular( Color( 1.0f, 1.0f, 1.0f ) );
+        mLight->setShadowParams( 60.0f, 0.5f, 8.0f );
         newLight = true;
+        cubeTimer.start();
     }
     
+    //    if (cubeTimer.getSeconds() > .05 && scaledZ < 350 ){
+    //        addCube(scaledX, scaledY, scaledZ-200);
+    //        cubeTimer = 0;
+    //        cubeTimer.start();
+    //    }
+    
+    if (scaledZ < 350 && targets.size() < 5 && cubeTimer.getSeconds() > 2){
+        addTarget(Vec3f (scaledX, scaledY, scaledZ));
+        cubeTimer = 0;
+        cubeTimer.start();
+    }
+    
+    if (cubes.size() >= 45){
+        if ( !newCloud){
+            mCloud = SphereCloud(0, 500);
+            newCloud = true;
+        }
+        if (newCloud && mCloud.getNumber() < 300 && gongTimer.getSeconds() > .5){
+            gongTimer = 0;
+            gongTimer.start();
+            mCloud.addSphere();
+        }
+    }
+    
+}
+
+void BrainbowApp::addCube(float x, float y, float z){
+    tempCube = Cube(Vec3f(x, y, z), screenCol, "solid");
+    cubes.push_back(tempCube);
+}
+
+void BrainbowApp::addTarget(Vec3f loc){
+    tempTarget = Target(loc);
+    targets.push_back(tempTarget);
 }
 
 

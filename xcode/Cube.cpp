@@ -10,31 +10,35 @@
 
 Cube::Cube(){}
 
-Cube::Cube(Vec3f loc, Vec3f colour){
-    cubeMaterial.setSpecular( ColorA (colour.x, colour.y, colour.z, 1) );
-	cubeMaterial.setDiffuse( ColorA (colour.x, colour.y, colour.z, 1));
-	cubeMaterial.setAmbient(ColorA (colour.x, colour.y, colour.z, 1)) ;
+Cube::Cube(Vec3f loc, Vec3f colour, string type){
+    cubeMaterial.setSpecular( ColorA (colour.x, colour.y, colour.z, .3) );
+	cubeMaterial.setDiffuse( ColorA (colour.x, colour.y, colour.z, .3));
+	cubeMaterial.setAmbient(ColorA (colour.x, colour.y, .05f, .01f)) ;
 	cubeMaterial.setShininess( 600.0f );
-    cubeMaterial.setEmission(ColorA(1, 1, 1, 1 ));
+//    cubeMaterial.setEmission(ColorA(1, 1, 1, 1 ));
     
-    gl::lineWidth(20);
+    gl::lineWidth(15);
     
     tempCube = cinder::gl::DisplayList (GL_COMPILE);
     tempCube.newList();
-    gl::drawStrokedCube(Vec3f(0,0,0), Vec3f (100, 100, 100));
+    if (type == "stroked")
+    gl::drawStrokedCube(Vec3f(0,0,0), Vec3f (80, 80, 80));
+    if (type == "solid")
+    gl::drawCube(Vec3f(0,0,0), Vec3f (80, 80, 80));
     tempCube.endList();
     tempCube.setMaterial( cubeMaterial );
     
     location = loc;
+    rotator = Vec3f(sin(getElapsedSeconds()), cos (getElapsedSeconds()), tan(getElapsedFrames()));
 }
 
 void Cube::update (float rotateSpeed, Vec3f screenCol){
     
-    tempCube.getModelMatrix().rotate( Vec3f(.2, 0, 0), rotateSpeed );
+    tempCube.getModelMatrix().rotate( rotator, rotateSpeed );
     
-    cubeMaterial.setSpecular( Color(screenCol.x, screenCol.y, screenCol.z) );
-	cubeMaterial.setDiffuse( Color(screenCol.x, screenCol.y, screenCol.z)  );
-	cubeMaterial.setAmbient(Color(screenCol.x, screenCol.y, .05f)  );
+    cubeMaterial.setSpecular( ColorA(screenCol.x, screenCol.y, screenCol.z, .6) );
+	cubeMaterial.setDiffuse( ColorA(screenCol.x, screenCol.y, screenCol.z, .6)  );
+	cubeMaterial.setAmbient(ColorA(screenCol.x, screenCol.y, screenCol.z, .01f)  );
 	cubeMaterial.setShininess( 600.0f );
     cubeMaterial.setEmission(ColorA(1, 1, 1, 1 ));
     tempCube.setMaterial( cubeMaterial );
@@ -46,4 +50,7 @@ void Cube::update (float rotateSpeed, Vec3f screenCol){
 
 Vec3f Cube::getLocation(){
     return location;
+}
+Vec3f Cube::getRotator(){
+    return rotator;
 }

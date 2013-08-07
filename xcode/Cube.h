@@ -32,13 +32,15 @@ using namespace std;
 class Cube{
 public:
     Cube();
-    Cube(Vec3f loc, Vec3f colour);   
+    Cube(Vec3f loc, Vec3f colour, string type);
     void draw();
     void update (float rotateSpeed, Vec3f screenCol);
     Vec3f getLocation();
+    Vec3f getRotator();
     
     gl::Material cubeMaterial;
     cinder::gl::DisplayList tempCube;
     Vec3f location;
+    Vec3f rotator;
     
 };
