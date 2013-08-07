@@ -55,7 +55,7 @@ public:
     
     gl::GlslProg		mShader;
     
-    cinder::gl::DisplayList         mSphere, mDisc, mCur, mCyl;
+    cinder::gl::DisplayList         mDiamond, mDisc, mCur, mCyl;
     ci::Timer timer;
     ci::Timer ballTimer;
     gl::Light			*mLight;
@@ -80,11 +80,13 @@ private:
     bool newLight = false;
     bool newCloud = false;
     bool targetFilled = false;
+    bool playCharge = false;
     bool sceneOne;
     bool sceneTwo;
     float lightFade = 0;
     float discOp = 0;
     float diamondFade;
+    int offCounter = 0;
     Vec3f screenCol;
     
     int zshift = 0;
@@ -113,7 +115,7 @@ private:
     OBJs sphere;
     
     //AUDIO
-    //    AudioCont mAudio;
+    AudioCont mAudio;
     
     float volume1;
     ci::Timer gongTimer;
@@ -130,10 +132,11 @@ void BrainbowApp::prepareSettings( Settings *settings )
 
 void BrainbowApp::setup()
 {
-    //    mAudio = AudioCont();
-    //    mAudio.setUp();
+    // LOAD AUDIO
+    mAudio = AudioCont();
+    mAudio.setUp();
     
-    // start scene1
+    // START SCENE 1
     sceneOne = true;
     sceneTwo = false;
     
@@ -196,13 +199,12 @@ void BrainbowApp::setup()
     initShadowMap();
     
     mCloud = SphereCloud(0, 70);
-    mCloud.addSphere();
     
-    mSphere = gl::DisplayList( GL_COMPILE );
-    mSphere.newList();
+    mDiamond = gl::DisplayList( GL_COMPILE );
+    mDiamond.newList();
     gl::drawSphere(Vec3f(0, 0, 0), 300, 4);
-    mSphere.endList();
-    mSphere.setMaterial( sphereMaterial );
+    mDiamond.endList();
+    mDiamond.setMaterial( sphereMaterial );
     
     mCyl = gl::DisplayList( GL_COMPILE );
     mCyl.newList();
@@ -219,14 +221,9 @@ void BrainbowApp::setup()
     
     mDisc = gl::DisplayList( GL_COMPILE );
     mDisc.newList();
-    //    mCloud.draw();
     gl::drawSolidCircle(Vec2f(0, 0), 60, 6);
     mDisc.endList();
     mDisc.setMaterial( discMaterial );
-    
-	// Set up camera
-    //	mCamera = CameraPersp( getWindowWidth(), getWindowHeight(), 60.0f, 0.01f, 1000.0f );
-    //	mCamera.lookAt( Vec3f( 0.0f, 125.0f, 500.0f ), Vec3f( 0.0f, 250.0f, 0.0f ) );
 	
 	// START LEAP
 	mLeap 		= LeapSdk::Device::create();
@@ -236,10 +233,6 @@ void BrainbowApp::setup()
     mShader = gl::GlslProg( loadResource( RES_SHADOWMAP_VERT ), loadResource( RES_SHADOWMAP_FRAG ) );
 	mShader.bind();
 	mShader.uniform( "depthTexture", 0 );
-    
-    //    sphere = OBJs("sphere.obj", "purpleflower.png");
-    //    myImage = gl::Texture( loadImage( loadResource( "purpleflower.png" ) ) );
-    
 }
 
 void BrainbowApp::draw()
@@ -276,38 +269,32 @@ void BrainbowApp::draw()
 	mDepthFbo.bindDepthTexture();
     mShader.bind();
     
-    // SHAPES
-    
-    //cyl
-    //    glPushMatrix();
-    //    glTranslated( scaledX, scaledY, scaledZ-400 );
-    //    mCyl.draw();
-    //    glPopMatrix();
-    
     
     // FIRST SCENE
     if (sceneOne){
         
         // disc
-        glPushMatrix();
-        glTranslated( 640, 400, zshift - 200);
-        if (shift2 && discOp > 1)
-            glScalef(discOp, discOp, 0);
-        //    cout << discOp << endl;
-        mDisc.draw();
-        glPopMatrix();
+        if (zshift > 0){
+            glPushMatrix();
+            glTranslated( 640, 400, zshift - 200);
+            if (shift2 && discOp > 1)
+                glScalef(discOp, discOp, 0);
+            //    cout << discOp << endl;
+            mDisc.draw();
+            glPopMatrix();
+        }
         
         //cloud
         glPushMatrix();
         glTranslated( getWindowWidth() * 0.5f, getWindowHeight() * 0.5f, zshift );
         //    if (lightFade > .45f)
-        mCloud.update(scaledX, scaledY, scaledZ, diamondFade);
+        mCloud.update(scaledX, scaledY, scaledZ, diamondFade, 1);
         glPopMatrix();
         
         if (drawDiamond){
             glPushMatrix();
             glTranslated( getWindowWidth() * 0.5f, getWindowHeight() * 0.5f, zshift);
-            mSphere.draw();
+            mDiamond.draw();
             glPopMatrix();
         }
     }
@@ -329,36 +316,54 @@ void BrainbowApp::draw()
         glPopMatrix();
         
         
-            // rotate whole scene; implement this
-//        if (targetFilled){
-//            glPushMatrix();
-//            glRotatef(getElapsedSeconds()*10, Vec3f (640, 400, 350) );
-//        }
-            for (int i = 0; i < cubes.size() ; i++){
-                glPushMatrix();
-                glTranslatef(cubes[i].getLocation());
-                cubes[i].update(.01f, screenCol);
-                glPopMatrix();
+        // rotate whole scene; implement this later:
+        
+        //        if (targetFilled){
+        //            glPushMatrix();
+        //            glRotatef(getElapsedSeconds()*10, Vec3f (640, 400, 350) );
+        //        }
+        for (int i = 0; i < cubes.size() ; i++){
+            glPushMatrix();
+            glTranslatef(cubes[i].getLocation());
+            cubes[i].update(.01f, screenCol);
+            glPopMatrix();
+        }
+        offCounter = 0;        
+        for (int i = 0; i < targets.size() ; i++){
+            glPushMatrix();
+            glTranslatef(targets[i].getLocation());
+            targets[i].update(.01f, handPos, screenCol);
+            if (targets[i].getBoxed() && targets[i].getBoxNumber() < 15 ){
+                addCube(targets[i].getLocation().x, targets[i].getLocation().y, targets[i].getLocation().z);
+                targets[i].addBox();
+                if (targets[i].getBoxNumber() == 15)
+                mAudio.playTraz("box");   
             }
             
-            for (int i = 0; i < targets.size() ; i++){
-                glPushMatrix();
-                glTranslatef(targets[i].getLocation());
-                targets[i].update(.01f, handPos, screenCol);
-                if (targets[i].getBoxed() && targets[i].getBoxNumber() < 15 ){
-                    addCube(targets[i].getLocation().x, targets[i].getLocation().y, targets[i].getLocation().z);
-                    targets[i].addBox();
-                }                
-                glPopMatrix();
+            glPopMatrix();
+            if (targets[i].getChargeSound()){
+                if (!mAudio.isPlaying("charge")){
+                    offCounter = 0;
+                    mAudio.playTraz("charge");
+                }
             }
-//        if (targetFilled)
-//            glPopMatrix();
-//        
+            //stop charge if deactivated
+            if (!targets[i].getChargeSound()){
+                offCounter++;
+            }
+            if (offCounter == targets.size()){
+                mAudio.stopTraz("charge");
+            }
+        }
+        //  (from above)
+        //   if (targetFilled)
+        //   glPopMatrix();
+        //
         
         //cloud
         glPushMatrix();
         glTranslated( getWindowWidth() * 0.5f, getWindowHeight() * 0.5f, zshift );
-        mCloud.update(0, 0, 0, 0);
+        mCloud.update(0, 0, 0, 0, 2);
         glPopMatrix();
     }
     
@@ -400,7 +405,7 @@ void BrainbowApp::updateShadowMap()
     mDisc.draw();
     //    mCyl.draw();
     //    mCur.draw();
-    mSphere.draw();
+    mDiamond.draw();
     
 	gl::popMatrices();
     
@@ -460,7 +465,7 @@ void BrainbowApp::update()
     //MOVE SHAPES
     //    mCyl.getModelMatrix().rotate( Vec3f( .02, .04, 0), 0.01f );
     if (gong)
-        mSphere.getModelMatrix().rotate( Vec3f( 0.0f, 0.5f, 0), 0.01f );
+        mDiamond.getModelMatrix().rotate( Vec3f( 0.0f, 0.5f, 0), 0.01f );
     //    mBall.getModelMatrix().rotate(Vec3f(0, -abs(sinSecs), 0), .01f);
     //    mCur.getModelMatrix().rotate(Vec3f(0.0f, 0.5f, 0), .03f);
     
@@ -468,28 +473,27 @@ void BrainbowApp::update()
 
 void BrainbowApp::scene1(){
     
-    if (!musicOn && getElapsedSeconds() > 2){
-        //        mAudio.playTraz("lowdrone");
-        musicOn = true;    }
+    if (!musicOn && getElapsedSeconds() > 1){
+        mAudio.playTraz("drone");
+    }
     
     //    //addspheres
-    if (lightFade >= 0.45f && ballTimer.getSeconds() > 0.2f && mCloud.getNumber() < 20){
+    if (lightFade >= 0.45f && ballTimer.getSeconds() > 0.5f && mCloud.getNumber() < 20){
         mCloud.addSphere();
+        mAudio.playTraz("bubble");
         ballTimer = 0;
         ballTimer.start();
     }
-    else if (lightFade >= 0.45f && ballTimer.getSeconds() > 1.0f && mCloud.getNumber() < 600 && !gong){
-        mCloud.addSphere();
-        ballTimer = 0;
-        ballTimer.start();
-    }
+    //    else if (lightFade >= 0.45f && ballTimer.getSeconds() > 1.0f && mCloud.getNumber() < 600 && !gong){
+    //        mCloud.addSphere();
+    //        ballTimer = 0;
+    //        ballTimer.start();
+    //    }
     //
     //into diamond
-    if (gongTimer.getSeconds()>1 && scaledZ < 290 && scaledZ > 100 && !gong && getElapsedSeconds() > 0){
-        //        mAudio.playTraz("activate");
-        mCloud.addSphere();
+    if (gongTimer.getSeconds()>1 && scaledZ < 290 && scaledZ > 100 && !gong && getElapsedSeconds() > 30){
+        mAudio.playTraz("activate");
         gong = true;
-        //        mAudio.playTraz("middrone");
         gongTimer.stop();
         gongTimer.start();
     }
@@ -499,8 +503,9 @@ void BrainbowApp::scene1(){
         zshift++;
         scaledZ += zshift;
     }
-    if (mCloud.getNumber() < 200 && ballTimer.getSeconds() > 0.1f && gong && zshift > 0){
+    if (mCloud.getNumber() < 300 && ballTimer.getSeconds() > 0.1f && gong && zshift > 0){
         mCloud.addSphere();
+        //        mAudio.playTraz("bubble");
         ballTimer = 0;
         ballTimer.start();
     }
@@ -508,7 +513,8 @@ void BrainbowApp::scene1(){
     //    cout << "x: " << scaledX << endl;
     //    cout << "y: " << scaledY << endl;
     //    cout << "z: " << scaledZ << endl;
-    if ((mCloud.getHexClear() || shift2) && getElapsedSeconds() > 10 && zshift < 750){
+    
+    if ((mCloud.getHexClear() || shift2) && getElapsedSeconds() > 10 && zshift < 750 && gong){
         //        if (getElapsedSeconds() > 10 && zshift < 720){
         shift2 = true;
         zshift++;
@@ -521,20 +527,23 @@ void BrainbowApp::scene1(){
         mDisc.setMaterial( discMaterial );
         
         discOp += .01;
-        if (zshift > 650){
+        if (zshift > 680){
             
             diamondFade += .005;
             sphereMaterial.setSpecular( ColorA(colorSat-0.3f, colorSat, colorSat, .4f-diamondFade ) );
             sphereMaterial.setDiffuse( ColorA(colorSat-0.3f, colorSat, colorSat, .4f-diamondFade ) );
             sphereMaterial.setAmbient( ColorA(colorSat-0.3f, colorSat, colorSat, .05f-diamondFade ) );
-            mSphere.setMaterial( sphereMaterial );
+            mDiamond.setMaterial( sphereMaterial );
             //                drawDiamond = false;
+        }
+        if (!musicOn){
+            mAudio.playTraz("activate2");
+            musicOn = true;
         }
     }
     if (zshift >= 750 && scaledZ > 700 && scaledY < 450 && scaledY > 320 && scaledX <685 && scaledX > 590){
         sceneOne = false;
         sceneTwo = true;
-        
         zshift = 0;
     }
 }
@@ -575,9 +584,9 @@ void BrainbowApp::scene2(){
             gongTimer = 0;
             gongTimer.start();
             mCloud.addSphere();
+            mAudio.playTraz("bubble");
         }
     }
-    
 }
 
 void BrainbowApp::addCube(float x, float y, float z){
@@ -586,6 +595,7 @@ void BrainbowApp::addCube(float x, float y, float z){
 }
 
 void BrainbowApp::addTarget(Vec3f loc){
+    mAudio.playTraz("target");
     tempTarget = Target(loc);
     targets.push_back(tempTarget);
 }

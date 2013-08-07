@@ -23,6 +23,8 @@
 #include "cinder/gl/Material.h"
 #include "cinder/gl/DisplayList.h"
 
+//#include "AudioCont.h"
+
 #endif /* defined(__Brainbow__Target__) */
 
 using namespace ci;
@@ -40,6 +42,7 @@ public:
     bool getBoxed();
     bool getFilled();
     void setFilled(bool isFilled);
+    bool getChargeSound();
     void addBox();
     int getBoxNumber();
     
@@ -55,5 +58,6 @@ public:
     bool boxed;
     bool newBox;
     bool filled;
+    bool soundPlaying;
     
 };

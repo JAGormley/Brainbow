@@ -56,6 +56,20 @@
 		C9A698F5FD724A73993D7378 /* b2GearJoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE9922DB393A4CE494A4A0FA /* b2GearJoint.cpp */; };
 		D21E46E417B0C40B001B9272 /* Cube.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D21E46E217B0C40B001B9272 /* Cube.cpp */; };
 		D21E46E717B1A586001B9272 /* Target.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D21E46E517B1A586001B9272 /* Target.cpp */; };
+		D276069D17B1FBCF008A1908 /* drone2.wav in Resources */ = {isa = PBXBuildFile; fileRef = D276069C17B1FBCF008A1908 /* drone2.wav */; };
+		D276069F17B2027F008A1908 /* activation2.wav in Resources */ = {isa = PBXBuildFile; fileRef = D276069E17B2027E008A1908 /* activation2.wav */; };
+		D27606A517B2094D008A1908 /* bubble1.wav in Resources */ = {isa = PBXBuildFile; fileRef = D27606A017B2094D008A1908 /* bubble1.wav */; };
+		D27606A617B2094D008A1908 /* bubble2.wav in Resources */ = {isa = PBXBuildFile; fileRef = D27606A117B2094D008A1908 /* bubble2.wav */; };
+		D27606A717B2094D008A1908 /* bubble3.wav in Resources */ = {isa = PBXBuildFile; fileRef = D27606A217B2094D008A1908 /* bubble3.wav */; };
+		D27606A817B2094D008A1908 /* bubble4.wav in Resources */ = {isa = PBXBuildFile; fileRef = D27606A317B2094D008A1908 /* bubble4.wav */; };
+		D27606A917B2094D008A1908 /* bubble5.wav in Resources */ = {isa = PBXBuildFile; fileRef = D27606A417B2094D008A1908 /* bubble5.wav */; };
+		D27606AB17B21AEC008A1908 /* loadtarg.wav in Resources */ = {isa = PBXBuildFile; fileRef = D27606AA17B21AEC008A1908 /* loadtarg.wav */; };
+		D27606AD17B22765008A1908 /* charge.wav in Resources */ = {isa = PBXBuildFile; fileRef = D27606AC17B22765008A1908 /* charge.wav */; };
+		D27606B317B238B4008A1908 /* box1.wav in Resources */ = {isa = PBXBuildFile; fileRef = D27606AE17B238B4008A1908 /* box1.wav */; };
+		D27606B417B238B4008A1908 /* box2.wav in Resources */ = {isa = PBXBuildFile; fileRef = D27606AF17B238B4008A1908 /* box2.wav */; };
+		D27606B517B238B4008A1908 /* box3.wav in Resources */ = {isa = PBXBuildFile; fileRef = D27606B017B238B4008A1908 /* box3.wav */; };
+		D27606B617B238B4008A1908 /* box4.wav in Resources */ = {isa = PBXBuildFile; fileRef = D27606B117B238B4008A1908 /* box4.wav */; };
+		D27606B717B238B4008A1908 /* box5.wav in Resources */ = {isa = PBXBuildFile; fileRef = D27606B217B238B4008A1908 /* box5.wav */; };
 		D28A10F717A227F5001872DA /* leapsyc.wav in Resources */ = {isa = PBXBuildFile; fileRef = D28A10F617A227F5001872DA /* leapsyc.wav */; };
 		D28A10FF17A254CF001872DA /* gang.wav in Resources */ = {isa = PBXBuildFile; fileRef = D28A10FE17A254CF001872DA /* gang.wav */; };
 		D28A110217A4722C001872DA /* AudioCont.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D28A110017A4722C001872DA /* AudioCont.cpp */; };
@@ -187,6 +201,20 @@
 		D21E46E317B0C40B001B9272 /* Cube.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cube.h; sourceTree = "<group>"; };
 		D21E46E517B1A586001B9272 /* Target.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Target.cpp; sourceTree = "<group>"; };
 		D21E46E617B1A586001B9272 /* Target.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Target.h; sourceTree = "<group>"; };
+		D276069C17B1FBCF008A1908 /* drone2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = drone2.wav; path = ../resources/drone2.wav; sourceTree = "<group>"; };
+		D276069E17B2027E008A1908 /* activation2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = activation2.wav; path = ../resources/activation2.wav; sourceTree = "<group>"; };
+		D27606A017B2094D008A1908 /* bubble1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = bubble1.wav; path = ../resources/bubble1.wav; sourceTree = "<group>"; };
+		D27606A117B2094D008A1908 /* bubble2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = bubble2.wav; path = ../resources/bubble2.wav; sourceTree = "<group>"; };
+		D27606A217B2094D008A1908 /* bubble3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = bubble3.wav; path = ../resources/bubble3.wav; sourceTree = "<group>"; };
+		D27606A317B2094D008A1908 /* bubble4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = bubble4.wav; path = ../resources/bubble4.wav; sourceTree = "<group>"; };
+		D27606A417B2094D008A1908 /* bubble5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = bubble5.wav; path = ../resources/bubble5.wav; sourceTree = "<group>"; };
+		D27606AA17B21AEC008A1908 /* loadtarg.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = loadtarg.wav; path = ../resources/loadtarg.wav; sourceTree = "<group>"; };
+		D27606AC17B22765008A1908 /* charge.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = charge.wav; path = ../resources/charge.wav; sourceTree = "<group>"; };
+		D27606AE17B238B4008A1908 /* box1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = box1.wav; path = ../resources/box1.wav; sourceTree = "<group>"; };
+		D27606AF17B238B4008A1908 /* box2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = box2.wav; path = ../resources/box2.wav; sourceTree = "<group>"; };
+		D27606B017B238B4008A1908 /* box3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = box3.wav; path = ../resources/box3.wav; sourceTree = "<group>"; };
+		D27606B117B238B4008A1908 /* box4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = box4.wav; path = ../resources/box4.wav; sourceTree = "<group>"; };
+		D27606B217B238B4008A1908 /* box5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = box5.wav; path = ../resources/box5.wav; sourceTree = "<group>"; };
 		D2881176F2624A6E95884914 /* b2ChainAndPolygonContact.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = b2ChainAndPolygonContact.cpp; path = ../blocks/Box2D/src/Box2D/Dynamics/Contacts/b2ChainAndPolygonContact.cpp; sourceTree = "<group>"; };
 		D28A10F617A227F5001872DA /* leapsyc.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = leapsyc.wav; path = ../resources/leapsyc.wav; sourceTree = "<group>"; };
 		D28A10FE17A254CF001872DA /* gang.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = gang.wav; path = ../resources/gang.wav; sourceTree = "<group>"; };
@@ -352,6 +380,20 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D27606AE17B238B4008A1908 /* box1.wav */,
+				D27606AF17B238B4008A1908 /* box2.wav */,
+				D27606B017B238B4008A1908 /* box3.wav */,
+				D27606B117B238B4008A1908 /* box4.wav */,
+				D27606B217B238B4008A1908 /* box5.wav */,
+				D27606AC17B22765008A1908 /* charge.wav */,
+				D27606AA17B21AEC008A1908 /* loadtarg.wav */,
+				D27606A017B2094D008A1908 /* bubble1.wav */,
+				D27606A117B2094D008A1908 /* bubble2.wav */,
+				D27606A217B2094D008A1908 /* bubble3.wav */,
+				D27606A317B2094D008A1908 /* bubble4.wav */,
+				D27606A417B2094D008A1908 /* bubble5.wav */,
+				D276069E17B2027E008A1908 /* activation2.wav */,
+				D276069C17B1FBCF008A1908 /* drone2.wav */,
 				D28A111517A8F791001872DA /* purpleflower.png */,
 				D28A111117A8F1E7001872DA /* sphere.obj */,
 				D28A110C17A76E90001872DA /* middrone.wav */,
@@ -670,6 +712,20 @@
 				D28A110D17A76E90001872DA /* middrone.wav in Resources */,
 				D28A111217A8F1E7001872DA /* sphere.obj in Resources */,
 				D28A111617A8F791001872DA /* purpleflower.png in Resources */,
+				D276069D17B1FBCF008A1908 /* drone2.wav in Resources */,
+				D276069F17B2027F008A1908 /* activation2.wav in Resources */,
+				D27606A517B2094D008A1908 /* bubble1.wav in Resources */,
+				D27606A617B2094D008A1908 /* bubble2.wav in Resources */,
+				D27606A717B2094D008A1908 /* bubble3.wav in Resources */,
+				D27606A817B2094D008A1908 /* bubble4.wav in Resources */,
+				D27606A917B2094D008A1908 /* bubble5.wav in Resources */,
+				D27606AB17B21AEC008A1908 /* loadtarg.wav in Resources */,
+				D27606AD17B22765008A1908 /* charge.wav in Resources */,
+				D27606B317B238B4008A1908 /* box1.wav in Resources */,
+				D27606B417B238B4008A1908 /* box2.wav in Resources */,
+				D27606B517B238B4008A1908 /* box3.wav in Resources */,
+				D27606B617B238B4008A1908 /* box4.wav in Resources */,
+				D27606B717B238B4008A1908 /* box5.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

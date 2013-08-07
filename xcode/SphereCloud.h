@@ -43,7 +43,7 @@ public:
     
     //FNS
     void draw();
-    void update(float x, float y, float z, float fade);
+    void update(float x, float y, float z, float fade, int scene);
     void addSphere();
     int getNumber();
     bool getHexClear();

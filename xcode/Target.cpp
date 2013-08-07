@@ -7,6 +7,7 @@
 //
 
 #include "Target.h"
+#include "AudioCont.h"
 
 Target::Target(){}
 
@@ -15,6 +16,7 @@ Target::Target(Vec3f loc){
     newT = true;
     newBox = false;
     boxed = false;
+    soundPlaying = false;
     fade = .6;
     boxNumber = 0;
     
@@ -47,7 +49,7 @@ Target::Target(Vec3f loc){
     tempTarget.setMaterial( targetMaterial );
     
     location = loc;
-    rotator = Vec3f(sin(getElapsedSeconds()), cos (getElapsedSeconds()), tan(getElapsedFrames()));
+    rotator = Vec3f(sin (getElapsedSeconds()), cos(getElapsedSeconds()), 0);
 }
 
 void Target::update (float rotateSpeed, Vec3f cursor, Vec3f screenCol){
@@ -67,8 +69,11 @@ void Target::update (float rotateSpeed, Vec3f cursor, Vec3f screenCol){
     // light up inner cirle
     if (!boxed && cursor.z < location.z && cursor.y < location.y+50 && cursor.y > location.y-50
         && cursor.x < location.x+50 && cursor.x > location.x-50 &&!newT){
+         soundPlaying = true;
+        
         charge(screenCol);
-        fade -= .005;
+        fade -= .005;  
+            
         if (fade <= 0){
             boxed = true;
             newBox = true;
@@ -77,6 +82,7 @@ void Target::update (float rotateSpeed, Vec3f cursor, Vec3f screenCol){
     // reset fade
     else if (!newT){
         fade = .6;
+        soundPlaying = false;
     }
     
     //stop drawing inner circle
@@ -102,6 +108,7 @@ void Target::update (float rotateSpeed, Vec3f cursor, Vec3f screenCol){
 }
 
 void Target::charge(Vec3f screenCol){
+   
     float chargeFade = fade * 1.3333;
     centerMaterial.setSpecular( ColorA(screenCol.x, screenCol.y, screenCol.z, .6-chargeFade) );
 	centerMaterial.setDiffuse( ColorA(screenCol.x, screenCol.y, screenCol.z, .6-chargeFade)  );
@@ -138,4 +145,8 @@ void Target::addBox(){
 
 int Target::getBoxNumber(){
     return boxNumber;
+}
+
+bool Target::getChargeSound(){
+    return soundPlaying;
 }

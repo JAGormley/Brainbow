@@ -27,11 +27,11 @@ SphereCloud::SphereCloud(int number, int size){
     mNumber = number;
     mSize = size;
     
-//	ballMaterial.setSpecular( ColorA(1, 1-0.5f, 1, .3f ) );
-//	ballMaterial.setDiffuse( ColorA(1, 1-0.5f, 1, .3f ) );
-//	ballMaterial.setAmbient( ColorA(1, 1-0.5f, 1, .05f ) );
-//	ballMaterial.setShininess( 600.0f );
-//    ballMaterial.setEmission(ColorA(1, 1, 1, 1 ));
+	ballMaterial.setSpecular( ColorA(1, 1-0.5f, 1, .3f ) );
+	ballMaterial.setDiffuse( ColorA(1, 1-0.5f, 1, .3f ) );
+	ballMaterial.setAmbient( ColorA(1, 1-0.5f, 1, .05f ) );
+	ballMaterial.setShininess( 600.0f );
+    ballMaterial.setEmission(ColorA(1, 1, 1, 1 ));
     
     for (int i = 0; i < mNumber ; i++){
         addSphere();
@@ -61,11 +61,11 @@ void SphereCloud::addSphere(){
     testLoc = Vec3f(x, y, z);
 }
 
-void SphereCloud::update(float x, float y, float z, float fade){
-    if (x == 0 && y == 0 && z == 0 && fade == 0){
-        ballMaterial.setSpecular( ColorA(.45, 1.0f, .75, .6f ) );
-        ballMaterial.setDiffuse( ColorA(.45,  1.0f, .75, .6f ) );
-        ballMaterial.setAmbient( ColorA(.45,  1.0f, .75, .05f ) );
+void SphereCloud::update(float x, float y, float z, float fade, int scene){
+    if (scene == 2){
+        ballMaterial.setSpecular( ColorA(.45, 8.0f, .75, .4f ) );
+        ballMaterial.setDiffuse( ColorA(.45,  8.0f, .75, .4f ) );
+        ballMaterial.setAmbient( ColorA(.45,  8.0f, .75, .05f ) );
         ballMaterial.setShininess( 600.0f );
         ballMaterial.setEmission(ColorA(1, 1, 1, 1 ));
     }
@@ -81,9 +81,6 @@ void SphereCloud::update(float x, float y, float z, float fade){
             sphereDL->getModelMatrix().rotate( Vec3f( rotations[i].x, rotations[i].y,
                                                      rotations[i].z), .005f);
             sphereDL->setMaterial(ballMaterial);
-            
-            //        if (locations[i].x > x-range && locations[i].x < x+range)
-            //                        range/ abs(x - locations[i].x);
         }
         
         else {
@@ -127,27 +124,27 @@ Vec3f SphereCloud::repel(Vec3f shiftedBall, Vec3f hand, int i){
     Vec3f translator;
     
     if (shiftedBall.x < hand.x && shiftedBall.x >= hand.x - range){
-        translator.x = -((shiftedBall.x - (hand.x - range) ) / range)*.4;
+        translator.x = -((shiftedBall.x - (hand.x - range) ) / range)*.1;
         //        cout << "left: "<< endl;
     }
     if (shiftedBall.x >= hand.x && shiftedBall.x <= hand.x + range){
-        translator.x = ((hand.x + range - shiftedBall.x) / range)*.4;
+        translator.x = ((hand.x + range - shiftedBall.x) / range)*.2;
         //        cout << "right: "<< endl;
     }
     if (shiftedBall.y < hand.y && shiftedBall.y >= hand.y - range){
-        translator.y = -((shiftedBall.y - (hand.y - range) ) / range)*.4;
+        translator.y = -((shiftedBall.y - (hand.y - range) ) / range)*.2;
         //        cout << "up: "<< endl;
     }
     if (shiftedBall.y >= hand.y && shiftedBall.y <= hand.y + range){
-        translator.y = ((hand.y + range - shiftedBall.y) / range)*.4;
+        translator.y = ((hand.y + range - shiftedBall.y) / range)*.2;
         //        cout << "down: "<< endl;
     }
     if (shiftedBall.z < hand.z && shiftedBall.z >= hand.z - range){
-        translator.z = -((shiftedBall.z - (hand.z - range) ) / range);
+        translator.z = -((shiftedBall.z - (hand.z - range) ) / range)*.3;
         //        cout << "away: "<< endl;
     }
     if (shiftedBall.z >= hand.z && shiftedBall.z <= hand.z + range){
-        translator.z = ((hand.z + range - shiftedBall.z) / range);
+        translator.z = ((hand.z + range - shiftedBall.z) / range)*.3;
         //        cout << "toward: "<< endl;
     }
     locations[i] += translator;
