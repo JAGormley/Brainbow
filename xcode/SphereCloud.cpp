@@ -75,9 +75,8 @@ void SphereCloud::update(float x, float y, float z, float fade, int scene){
     hexClear = true;
     for( vector<cinder::gl::DisplayList>::iterator sphereDL = cList.begin(); sphereDL != cList.end(); ++sphereDL){
         
-        if (x == 0 && y == 0 && z == 0 && fade == 0){
-//            sphereDL->getModelMatrix().rotate( Vec3f( abs(sin(getElapsedSeconds())) * rotations[i].x, abs(cos(getElapsedSeconds()))* rotations[i].y,
-//                                                     rotations[i].z), .005f);
+        // 
+        if (scene == 2){
             sphereDL->getModelMatrix().rotate( Vec3f( rotations[i].x, rotations[i].y,
                                                      rotations[i].z), .005f);
             sphereDL->setMaterial(ballMaterial);
@@ -174,10 +173,3 @@ void SphereCloud::clear(){
     rotations.clear();
     cList.clear();
 }
-
-
-//if (x within range of sphere){
-//    repel(){
-//        add amount to coordinate that is fraction of range depending on how far from range
-//        distance += range * range-distance
-// pos += range / (pos<->source)

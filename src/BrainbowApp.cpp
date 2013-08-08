@@ -43,8 +43,6 @@ using namespace ci;
 using namespace ci::app;
 using namespace std;
 
-static const Color BLUE( 0.25f, 0.25f, 1.0f );
-static const Color RED( 1.0f, 0.25f, 0.25f );
 static const int SHADOW_MAP_RESOLUTION = 1024;
 
 class BrainbowApp : public ci::app::AppNative
@@ -471,12 +469,10 @@ void BrainbowApp::update()
     
     mLight->lookAt( handPos, Vec3f::zero() );
     
-    //MOVE SHAPES
-    //    mCyl.getModelMatrix().rotate( Vec3f( .02, .04, 0), 0.01f );
+    //ROTATE DIAMOND
     if (gong)
         mDiamond.getModelMatrix().rotate( Vec3f( 0.0f, 0.5f, 0), 0.01f );
-    //    mBall.getModelMatrix().rotate(Vec3f(0, -abs(sinSecs), 0), .01f);
-    //    mCur.getModelMatrix().rotate(Vec3f(0.0f, 0.5f, 0), .03f);
+
     
 }
 
@@ -493,13 +489,8 @@ void BrainbowApp::scene1(){
         ballTimer = 0;
         ballTimer.start();
     }
-    //    else if (lightFade >= 0.45f && ballTimer.getSeconds() > 1.0f && mCloud.getNumber() < 600 && !gong){
-    //        mCloud.addSphere();
-    //        ballTimer = 0;
-    //        ballTimer.start();
-    //    }
-    //
-    //into diamond
+    
+        //into diamond
     if (gongTimer.getSeconds()>1 && scaledZ < 290 && scaledZ > 100 && !gong && getElapsedSeconds() > 30){
         mAudio.playTraz("activate");
         gong = true;
@@ -571,12 +562,6 @@ void BrainbowApp::scene2(){
         newLight = true;
         cubeTimer.start();
     }
-    
-    //    if (cubeTimer.getSeconds() > .05 && scaledZ < 350 ){
-    //        addCube(scaledX, scaledY, scaledZ-200);
-    //        cubeTimer = 0;
-    //        cubeTimer.start();
-    //    }
     
     if (scaledZ < 350 && targets.size() < 5 && cubeTimer.getSeconds() > 2){
         addTarget(Vec3f (scaledX, scaledY, scaledZ));

@@ -1,5 +1,5 @@
 //
-//  Audio.cpp
+//  AudioCont.cpp
 //  Brainbow
 //
 //  Created by Andrew Gormley on 2013-07-27.

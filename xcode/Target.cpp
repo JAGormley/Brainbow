@@ -23,13 +23,7 @@ Target::Target(Vec3f loc){
     targetMaterial.setSpecular( ColorA (.9, .9, .9, .0) );
 	targetMaterial.setDiffuse( ColorA (.9, .9, .9, .0));
 	targetMaterial.setAmbient(ColorA (.3, .3, .3f, .0)) ;
-	targetMaterial.setShininess( 600.0f );
-    
-//    centerMaterial.setSpecular( ColorA(.5, .5, 1, .6) );
-//	centerMaterial.setDiffuse( ColorA(.5, .5, 1, .6)  );
-//	centerMaterial.setAmbient(ColorA(.5, .5, .5, .01f)  );
-//	centerMaterial.setShininess( 600.0f );
-//    centerMaterial.setEmission(ColorA(1, 1, 1, 1 ));
+	targetMaterial.setShininess( 600.0f )
     
     gl::lineWidth(600);
     

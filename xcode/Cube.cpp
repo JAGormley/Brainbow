@@ -15,7 +15,7 @@ Cube::Cube(Vec3f loc, Vec3f colour, string type){
 	cubeMaterial.setDiffuse( ColorA (colour.x, colour.y, colour.z, .3));
 	cubeMaterial.setAmbient(ColorA (colour.x, colour.y, .05f, .01f)) ;
 	cubeMaterial.setShininess( 600.0f );
-//    cubeMaterial.setEmission(ColorA(1, 1, 1, 1 ));
+    cubeMaterial.setEmission(ColorA(1, 1, 1, 1 ));
     
     gl::lineWidth(15);
     
