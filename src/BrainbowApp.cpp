@@ -1,3 +1,12 @@
+//
+//  BrainbowApp.cpp
+//  Brainbow
+//
+//  Created by Andrew Gormley on 2013-07-29.
+//
+//  (shader resources and shader implementation taken from Cinder sample "shadowMap": https://github.com/cinder/Cinder/tree/master/samples/shadowMap )
+
+
 #include "Resources.h"
 #include "SphereCloud.h"
 #include "AudioCont.h"

@@ -17,37 +17,36 @@ cCpResource ../resources/purpleflower.png ./build/Debug/Brainbow.app/Contents/Re
 cCpResource ../resources/drone2.wav ./build/Debug/Brainbow.app/Contents/Resources/drone2.wav
 cCpResource ../resources/activation2.wav ./build/Debug/Brainbow.app/Contents/Resources/activation2.wav
 cCpResource ../resources/bubble1.wav ./build/Debug/Brainbow.app/Contents/Resources/bubble1.wav
-cCpResource ../resources/bubble3.wav ./build/Debug/Brainbow.app/Contents/Resources/bubble3.wav
 cCpResource ../resources/bubble2.wav ./build/Debug/Brainbow.app/Contents/Resources/bubble2.wav
-cCpResource ../resources/bubble4.wav ./build/Debug/Brainbow.app/Contents/Resources/bubble4.wav
+cCpResource ../resources/bubble3.wav ./build/Debug/Brainbow.app/Contents/Resources/bubble3.wav
 cCpResource ../resources/bubble5.wav ./build/Debug/Brainbow.app/Contents/Resources/bubble5.wav
+cCpResource ../resources/bubble4.wav ./build/Debug/Brainbow.app/Contents/Resources/bubble4.wav
 cCpResource ../resources/loadtarg.wav ./build/Debug/Brainbow.app/Contents/Resources/loadtarg.wav
 cCpResource ../resources/charge.wav ./build/Debug/Brainbow.app/Contents/Resources/charge.wav
-cCpResource ../resources/box2.wav ./build/Debug/Brainbow.app/Contents/Resources/box2.wav
 cCpResource ../resources/box1.wav ./build/Debug/Brainbow.app/Contents/Resources/box1.wav
+cCpResource ../resources/box2.wav ./build/Debug/Brainbow.app/Contents/Resources/box2.wav
 cCpResource ../resources/box3.wav ./build/Debug/Brainbow.app/Contents/Resources/box3.wav
 cCpResource ../resources/box4.wav ./build/Debug/Brainbow.app/Contents/Resources/box4.wav
 cCpResource ../resources/box5.wav ./build/Debug/Brainbow.app/Contents/Resources/box5.wav
 cProcessPCH++ /var/folders/3y/t5y4y0f16_j18_6kjk1s6q6h0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/Brainbow_Prefix-chnfqnmsxignwyghutuopglinysq/Brainbow_Prefix.pch.pth Brainbow_Prefix.pch normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC ./build/Brainbow.build/Debug/Brainbow.build/Objects-normal/i386/b2RevoluteJoint.o /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../blocks/Box2D/src/Box2D/Dynamics/Joints/b2RevoluteJoint.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC ./build/Brainbow.build/Debug/Brainbow.build/Objects-normal/i386/b2ContactSolver.o /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../blocks/Box2D/src/Box2D/Dynamics/Contacts/b2ContactSolver.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC ./build/Brainbow.build/Debug/Brainbow.build/Objects-normal/i386/b2EdgeShape.o /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../blocks/Box2D/src/Box2D/Collision/Shapes/b2EdgeShape.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC ./build/Brainbow.build/Debug/Brainbow.build/Objects-normal/i386/b2Settings.o /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../blocks/Box2D/src/Box2D/Common/b2Settings.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC ./build/Brainbow.build/Debug/Brainbow.build/Objects-normal/i386/BrainbowApp.o /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../src/BrainbowApp.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC ./build/Brainbow.build/Debug/Brainbow.build/Objects-normal/i386/b2DistanceJoint.o /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../blocks/Box2D/src/Box2D/Dynamics/Joints/b2DistanceJoint.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC ./build/Brainbow.build/Debug/Brainbow.build/Objects-normal/i386/b2BroadPhase.o /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../blocks/Box2D/src/Box2D/Collision/b2BroadPhase.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC ./build/Brainbow.build/Debug/Brainbow.build/Objects-normal/i386/b2CollideCircle.o /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../blocks/Box2D/src/Box2D/Collision/b2CollideCircle.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC ./build/Brainbow.build/Debug/Brainbow.build/Objects-normal/i386/b2CollideEdge.o /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../blocks/Box2D/src/Box2D/Collision/b2CollideEdge.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC ./build/Brainbow.build/Debug/Brainbow.build/Objects-normal/i386/b2CollidePolygon.o /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../blocks/Box2D/src/Box2D/Collision/b2CollidePolygon.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC ./build/Brainbow.build/Debug/Brainbow.build/Objects-normal/i386/b2Collision.o /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../blocks/Box2D/src/Box2D/Collision/b2Collision.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC ./build/Brainbow.build/Debug/Brainbow.build/Objects-normal/i386/b2CollidePolygon.o /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../blocks/Box2D/src/Box2D/Collision/b2CollidePolygon.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC ./build/Brainbow.build/Debug/Brainbow.build/Objects-normal/i386/b2Distance.o /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../blocks/Box2D/src/Box2D/Collision/b2Distance.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC ./build/Brainbow.build/Debug/Brainbow.build/Objects-normal/i386/b2DynamicTree.o /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../blocks/Box2D/src/Box2D/Collision/b2DynamicTree.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC ./build/Brainbow.build/Debug/Brainbow.build/Objects-normal/i386/b2TimeOfImpact.o /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../blocks/Box2D/src/Box2D/Collision/b2TimeOfImpact.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC ./build/Brainbow.build/Debug/Brainbow.build/Objects-normal/i386/b2ChainShape.o /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../blocks/Box2D/src/Box2D/Collision/Shapes/b2ChainShape.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC ./build/Brainbow.build/Debug/Brainbow.build/Objects-normal/i386/b2CircleShape.o /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../blocks/Box2D/src/Box2D/Collision/Shapes/b2CircleShape.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC ./build/Brainbow.build/Debug/Brainbow.build/Objects-normal/i386/b2EdgeShape.o /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../blocks/Box2D/src/Box2D/Collision/Shapes/b2EdgeShape.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC ./build/Brainbow.build/Debug/Brainbow.build/Objects-normal/i386/b2PolygonShape.o /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../blocks/Box2D/src/Box2D/Collision/Shapes/b2PolygonShape.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC ./build/Brainbow.build/Debug/Brainbow.build/Objects-normal/i386/b2BlockAllocator.o /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../blocks/Box2D/src/Box2D/Common/b2BlockAllocator.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC ./build/Brainbow.build/Debug/Brainbow.build/Objects-normal/i386/b2Draw.o /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../blocks/Box2D/src/Box2D/Common/b2Draw.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC ./build/Brainbow.build/Debug/Brainbow.build/Objects-normal/i386/b2Math.o /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../blocks/Box2D/src/Box2D/Common/b2Math.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC ./build/Brainbow.build/Debug/Brainbow.build/Objects-normal/i386/b2Settings.o /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../blocks/Box2D/src/Box2D/Common/b2Settings.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC ./build/Brainbow.build/Debug/Brainbow.build/Objects-normal/i386/b2StackAllocator.o /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../blocks/Box2D/src/Box2D/Common/b2StackAllocator.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC ./build/Brainbow.build/Debug/Brainbow.build/Objects-normal/i386/b2Timer.o /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../blocks/Box2D/src/Box2D/Common/b2Timer.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC ./build/Brainbow.build/Debug/Brainbow.build/Objects-normal/i386/b2Body.o /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../blocks/Box2D/src/Box2D/Dynamics/b2Body.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
@@ -60,28 +59,29 @@ cCompileC ./build/Brainbow.build/Debug/Brainbow.build/Objects-normal/i386/b2Chai
 cCompileC ./build/Brainbow.build/Debug/Brainbow.build/Objects-normal/i386/b2ChainAndPolygonContact.o /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../blocks/Box2D/src/Box2D/Dynamics/Contacts/b2ChainAndPolygonContact.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC ./build/Brainbow.build/Debug/Brainbow.build/Objects-normal/i386/b2CircleContact.o /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../blocks/Box2D/src/Box2D/Dynamics/Contacts/b2CircleContact.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC ./build/Brainbow.build/Debug/Brainbow.build/Objects-normal/i386/b2Contact.o /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../blocks/Box2D/src/Box2D/Dynamics/Contacts/b2Contact.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC ./build/Brainbow.build/Debug/Brainbow.build/Objects-normal/i386/b2ContactSolver.o /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../blocks/Box2D/src/Box2D/Dynamics/Contacts/b2ContactSolver.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC ./build/Brainbow.build/Debug/Brainbow.build/Objects-normal/i386/b2EdgeAndCircleContact.o /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../blocks/Box2D/src/Box2D/Dynamics/Contacts/b2EdgeAndCircleContact.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC ./build/Brainbow.build/Debug/Brainbow.build/Objects-normal/i386/b2EdgeAndPolygonContact.o /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../blocks/Box2D/src/Box2D/Dynamics/Contacts/b2EdgeAndPolygonContact.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC ./build/Brainbow.build/Debug/Brainbow.build/Objects-normal/i386/b2PolygonAndCircleContact.o /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../blocks/Box2D/src/Box2D/Dynamics/Contacts/b2PolygonAndCircleContact.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC ./build/Brainbow.build/Debug/Brainbow.build/Objects-normal/i386/b2PolygonContact.o /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../blocks/Box2D/src/Box2D/Dynamics/Contacts/b2PolygonContact.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC ./build/Brainbow.build/Debug/Brainbow.build/Objects-normal/i386/b2FrictionJoint.o /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../blocks/Box2D/src/Box2D/Dynamics/Joints/b2FrictionJoint.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC ./build/Brainbow.build/Debug/Brainbow.build/Objects-normal/i386/b2GearJoint.o /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../blocks/Box2D/src/Box2D/Dynamics/Joints/b2GearJoint.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC ./build/Brainbow.build/Debug/Brainbow.build/Objects-normal/i386/b2DistanceJoint.o /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../blocks/Box2D/src/Box2D/Dynamics/Joints/b2DistanceJoint.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC ./build/Brainbow.build/Debug/Brainbow.build/Objects-normal/i386/b2Joint.o /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../blocks/Box2D/src/Box2D/Dynamics/Joints/b2Joint.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC ./build/Brainbow.build/Debug/Brainbow.build/Objects-normal/i386/b2MouseJoint.o /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../blocks/Box2D/src/Box2D/Dynamics/Joints/b2MouseJoint.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC ./build/Brainbow.build/Debug/Brainbow.build/Objects-normal/i386/b2GearJoint.o /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../blocks/Box2D/src/Box2D/Dynamics/Joints/b2GearJoint.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC ./build/Brainbow.build/Debug/Brainbow.build/Objects-normal/i386/b2PrismaticJoint.o /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../blocks/Box2D/src/Box2D/Dynamics/Joints/b2PrismaticJoint.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC ./build/Brainbow.build/Debug/Brainbow.build/Objects-normal/i386/b2PulleyJoint.o /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../blocks/Box2D/src/Box2D/Dynamics/Joints/b2PulleyJoint.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC ./build/Brainbow.build/Debug/Brainbow.build/Objects-normal/i386/b2RevoluteJoint.o /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../blocks/Box2D/src/Box2D/Dynamics/Joints/b2RevoluteJoint.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC ./build/Brainbow.build/Debug/Brainbow.build/Objects-normal/i386/b2RopeJoint.o /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../blocks/Box2D/src/Box2D/Dynamics/Joints/b2RopeJoint.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC ./build/Brainbow.build/Debug/Brainbow.build/Objects-normal/i386/b2WeldJoint.o /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../blocks/Box2D/src/Box2D/Dynamics/Joints/b2WeldJoint.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC ./build/Brainbow.build/Debug/Brainbow.build/Objects-normal/i386/b2WheelJoint.o /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../blocks/Box2D/src/Box2D/Dynamics/Joints/b2WheelJoint.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC ./build/Brainbow.build/Debug/Brainbow.build/Objects-normal/i386/b2Rope.o /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../blocks/Box2D/src/Box2D/Rope/b2Rope.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC ./build/Brainbow.build/Debug/Brainbow.build/Objects-normal/i386/Cairo.o /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../blocks/Cairo/src/Cairo.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC ./build/Brainbow.build/Debug/Brainbow.build/Objects-normal/i386/Cinder-LeapSdk.o /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../blocks/LeapMotion/src/Cinder-LeapSdk.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC ./build/Brainbow.build/Debug/Brainbow.build/Objects-normal/i386/Cairo.o /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../blocks/Cairo/src/Cairo.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC ./build/Brainbow.build/Debug/Brainbow.build/Objects-normal/i386/AudioCont.o /Users/andrewjgormley/Documents/jams/Brainbow/xcode/AudioCont.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC ./build/Brainbow.build/Debug/Brainbow.build/Objects-normal/i386/SphereCloud.o /Users/andrewjgormley/Documents/jams/Brainbow/xcode/SphereCloud.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC ./build/Brainbow.build/Debug/Brainbow.build/Objects-normal/i386/OBJs.o /Users/andrewjgormley/Documents/jams/Brainbow/xcode/OBJs.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC ./build/Brainbow.build/Debug/Brainbow.build/Objects-normal/i386/Cube.o /Users/andrewjgormley/Documents/jams/Brainbow/xcode/Cube.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC ./build/Brainbow.build/Debug/Brainbow.build/Objects-normal/i386/Target.o /Users/andrewjgormley/Documents/jams/Brainbow/xcode/Target.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC ./build/Brainbow.build/Debug/Brainbow.build/Objects-normal/i386/Cube.o /Users/andrewjgormley/Documents/jams/Brainbow/xcode/Cube.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
 cLd /Users/andrewjgormley/Documents/jams/Brainbow/xcode/./build/Debug/Brainbow.app/Contents/MacOS/Brainbow normal i386
 cPBXCp ../blocks/LeapMotion/lib/macosx/libLeap.dylib ./build/Debug/Brainbow.app/Contents/MacOS/libLeap.dylib
 cTouch /Users/andrewjgormley/Documents/jams/Brainbow/xcode/./build/Debug/Brainbow.app
@@ -5477,9 +5477,9 @@ t1374809971
 s5965868
 
 N/Users/andrewjgormley/Documents/jams/Brainbow/xcode/../resources/loadtarg.wav
-c000000005201E358000000000009C82C
-t1375855448
-s641068
+c000000005202121E00000000000A1828
+t1375867422
+s661544
 
 N/Users/andrewjgormley/Documents/jams/Brainbow/xcode/../resources/lowdrone.wav
 c0000000051F4355200000000005E355C
@@ -5527,9 +5527,9 @@ t1375847635
 s434797
 
 N/Users/andrewjgormley/Documents/jams/Brainbow/xcode/../src/BrainbowApp.cpp
-c0000000052020CFE0000000000004223
-t1375866110
-s16931
+c000000005203113A0000000000004313
+t1375932730
+s17171
 
 N/Users/andrewjgormley/Documents/jams/Brainbow/xcode/./build/Brainbow.build/Debug/Brainbow.build/Objects-normal/i386/AudioCont.o
 t1375865205
@@ -5541,8 +5541,8 @@ t1375847462
 s6964
 
 N/Users/andrewjgormley/Documents/jams/Brainbow/xcode/./build/Brainbow.build/Debug/Brainbow.build/Objects-normal/i386/BrainbowApp.o
-t1375865920
-s4063300
+t1375932738
+s4063284
 
 N/Users/andrewjgormley/Documents/jams/Brainbow/xcode/./build/Brainbow.build/Debug/Brainbow.build/Objects-normal/i386/Cairo.o
 t1375847615
@@ -5561,7 +5561,7 @@ t1375847624
 s640096
 
 N/Users/andrewjgormley/Documents/jams/Brainbow/xcode/./build/Brainbow.build/Debug/Brainbow.build/Objects-normal/i386/SphereCloud.o
-t1375851276
+t1375866118
 s2313472
 
 N/Users/andrewjgormley/Documents/jams/Brainbow/xcode/./build/Brainbow.build/Debug/Brainbow.build/Objects-normal/i386/Target.o
@@ -5749,7 +5749,7 @@ t1375847583
 s87848
 
 N/Users/andrewjgormley/Documents/jams/Brainbow/xcode/./build/Debug/Brainbow.app
-t1375865924
+t1375932742
 s102
 
 N/Users/andrewjgormley/Documents/jams/Brainbow/xcode/./build/Debug/Brainbow.app/Contents/Info.plist
@@ -5757,8 +5757,8 @@ t1375847462
 s1450
 
 N/Users/andrewjgormley/Documents/jams/Brainbow/xcode/./build/Debug/Brainbow.app/Contents/MacOS/Brainbow
-t1375865924
-s4182996
+t1375932742
+s4182984
 
 N/Users/andrewjgormley/Documents/jams/Brainbow/xcode/./build/Debug/Brainbow.app/Contents/MacOS/libLeap.dylib
 t1375847632
@@ -5861,8 +5861,8 @@ t1375847462
 s5965868
 
 N/Users/andrewjgormley/Documents/jams/Brainbow/xcode/./build/Debug/Brainbow.app/Contents/Resources/loadtarg.wav
-t1375855618
-s641068
+t1375932481
+s661544
 
 N/Users/andrewjgormley/Documents/jams/Brainbow/xcode/./build/Debug/Brainbow.app/Contents/Resources/lowdrone.wav
 t1375847462
@@ -6151,7 +6151,7 @@ r0
 
 CCheck dependencies
 r0
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies4b73537f44b2b741^d6ab547f44b2b741^---0#1#0#--18"Check dependencies36"634DB408-C2F8-4525-A487-8BCCF4966621-
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies73bc0ee569b3b741^fa2813e569b3b741^---0#1#0#--18"Check dependencies36"2634A02B-99BB-44C7-8B22-D0EBDC53CAEC-
 
 CCompileC ./build/Brainbow.build/Debug/Brainbow.build/Objects-normal/i386/AudioCont.o /Users/andrewjgormley/Documents/jams/Brainbow/xcode/AudioCont.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
 s397557999.000017
@@ -6167,8 +6167,8 @@ xcom.apple.compilers.llvm.clang.1_0.compiler
 lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection73"Compile /Users/andrewjgormley/Documents/jams/Brainbow/xcode/AudioCont.cppec3200ef40b2b741^fa4466f540b2b741^---0#0#0#-19%DVTDocumentLocation2@81"file://localhost/Users/andrewjgormley/Documents/jams/Brainbow/xcode/AudioCont.cpp0000000000000000^3045"CompileC ./build/Brainbow.build/Debug/Brainbow.build/Objects-normal/i386/AudioCont.o AudioCont.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/andrewjgormley/Documents/jams/Brainbow/xcode    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch i386 -fmessage-length=0 -std=c++11 -stdlib=libc++ -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.7 -g -fvisibility-inlines-hidden -Wno-sign-conversion -iquote /Users/andrewjgormley/Documents/jams/Brainbow/xcode/./build/Brainbow.build/Debug/Brainbow.build/Brainbow-generated-files.hmap -I/Users/andrewjgormley/Documents/jams/Brainbow/xcode/./build/Brainbow.build/Debug/Brainbow.build/Brainbow-own-target-headers.hmap -I/Users/andrewjgormley/Documents/jams/Brainbow/xcode/./build/Brainbow.build/Debug/Brainbow.build/Brainbow-all-target-headers.hmap -iquote /Users/andrewjgormley/Documents/jams/Brainbow/xcode/./build/Brainbow.build/Debug/Brainbow.build/Brainbow-project-headers.hmap -iquote../../../../git/notschool/Cinder/include -iquote../include -iquote../blocks/Cairo/include -iquote../blocks/LeapMotion/src -I/Users/andrewjgormley/Documents/jams/Brainbow/xcode/build/Debug/include -I../../../../git/notschool/Cinder/boost -I../blocks/Box2D/src -I../blocks/Cairo/include/macosx -I/Users/andrewjgormley/Documents/jams/Brainbow/xcode/./build/Brainbow.build/Debug/Brainbow.build/DerivedSources/i386 -I/Users/andrewjgormley/Documents/jams/Brainbow/xcode/./build/Brainbow.build/Debug/Brainbow.build/DerivedSources -F/Users/andrewjgormley/Documents/jams/Brainbow/xcode/build/Debug -include /var/folders/3y/t5y4y0f16_j18_6kjk1s6q6h0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/Brainbow_Prefix-chnfqnmsxignwyghutuopglinysq/Brainbow_Prefix.pch -MMD -MT dependencies -MF /Users/andrewjgormley/Documents/jams/Brainbow/xcode/./build/Brainbow.build/Debug/Brainbow.build/Objects-normal/i386/AudioCont.d --serialize-diagnostics /Users/andrewjgormley/Documents/jams/Brainbow/xcode/./build/Brainbow.build/Debug/Brainbow.build/Objects-normal/i386/AudioCont.dia -c /Users/andrewjgormley/Documents/jams/Brainbow/xcode/AudioCont.cpp -o /Users/andrewjgormley/Documents/jams/Brainbow/xcode/./build/Brainbow.build/Debug/Brainbow.build/Objects-normal/i386/AudioCont.o36"AC2AA231-DCA8-4C67-ACCE-849C96D9A87F-
 
 CCompileC ./build/Brainbow.build/Debug/Brainbow.build/Objects-normal/i386/BrainbowApp.o /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../src/BrainbowApp.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
-s397558911.418194
-e397558923.537962
+s397625530.468251
+e397625538.550382
 r1
 xCompileC
 x./build/Brainbow.build/Debug/Brainbow.build/Objects-normal/i386/BrainbowApp.o
@@ -6177,7 +6177,7 @@ xnormal
 xi386
 xc++
 xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection82"Compile /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../src/BrainbowApp.cpp043a6b7f44b2b741^a5828a8b44b2b741^---0#0#0#-19%DVTDocumentLocation2@90"file://localhost/Users/andrewjgormley/Documents/jams/Brainbow/xcode/../src/BrainbowApp.cpp0000000000000000^3071"CompileC ./build/Brainbow.build/Debug/Brainbow.build/Objects-normal/i386/BrainbowApp.o ../src/BrainbowApp.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/andrewjgormley/Documents/jams/Brainbow/xcode    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch i386 -fmessage-length=0 -std=c++11 -stdlib=libc++ -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.7 -g -fvisibility-inlines-hidden -Wno-sign-conversion -iquote /Users/andrewjgormley/Documents/jams/Brainbow/xcode/./build/Brainbow.build/Debug/Brainbow.build/Brainbow-generated-files.hmap -I/Users/andrewjgormley/Documents/jams/Brainbow/xcode/./build/Brainbow.build/Debug/Brainbow.build/Brainbow-own-target-headers.hmap -I/Users/andrewjgormley/Documents/jams/Brainbow/xcode/./build/Brainbow.build/Debug/Brainbow.build/Brainbow-all-target-headers.hmap -iquote /Users/andrewjgormley/Documents/jams/Brainbow/xcode/./build/Brainbow.build/Debug/Brainbow.build/Brainbow-project-headers.hmap -iquote../../../../git/notschool/Cinder/include -iquote../include -iquote../blocks/Cairo/include -iquote../blocks/LeapMotion/src -I/Users/andrewjgormley/Documents/jams/Brainbow/xcode/build/Debug/include -I../../../../git/notschool/Cinder/boost -I../blocks/Box2D/src -I../blocks/Cairo/include/macosx -I/Users/andrewjgormley/Documents/jams/Brainbow/xcode/./build/Brainbow.build/Debug/Brainbow.build/DerivedSources/i386 -I/Users/andrewjgormley/Documents/jams/Brainbow/xcode/./build/Brainbow.build/Debug/Brainbow.build/DerivedSources -F/Users/andrewjgormley/Documents/jams/Brainbow/xcode/build/Debug -include /var/folders/3y/t5y4y0f16_j18_6kjk1s6q6h0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/Brainbow_Prefix-chnfqnmsxignwyghutuopglinysq/Brainbow_Prefix.pch -MMD -MT dependencies -MF /Users/andrewjgormley/Documents/jams/Brainbow/xcode/./build/Brainbow.build/Debug/Brainbow.build/Objects-normal/i386/BrainbowApp.d --serialize-diagnostics /Users/andrewjgormley/Documents/jams/Brainbow/xcode/./build/Brainbow.build/Debug/Brainbow.build/Objects-normal/i386/BrainbowApp.dia -c /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../src/BrainbowApp.cpp -o /Users/andrewjgormley/Documents/jams/Brainbow/xcode/./build/Brainbow.build/Debug/Brainbow.build/Objects-normal/i386/BrainbowApp.o36"9C5F53A4-0497-4856-9155-7FBE88493878-
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection82"Compile /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../src/BrainbowApp.cpp15ff77ba48b3b741^c23391c248b3b741^---0#0#0#-19%DVTDocumentLocation2@90"file://localhost/Users/andrewjgormley/Documents/jams/Brainbow/xcode/../src/BrainbowApp.cpp0000000000000000^3071"CompileC ./build/Brainbow.build/Debug/Brainbow.build/Objects-normal/i386/BrainbowApp.o ../src/BrainbowApp.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/andrewjgormley/Documents/jams/Brainbow/xcode    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch i386 -fmessage-length=0 -std=c++11 -stdlib=libc++ -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.7 -g -fvisibility-inlines-hidden -Wno-sign-conversion -iquote /Users/andrewjgormley/Documents/jams/Brainbow/xcode/./build/Brainbow.build/Debug/Brainbow.build/Brainbow-generated-files.hmap -I/Users/andrewjgormley/Documents/jams/Brainbow/xcode/./build/Brainbow.build/Debug/Brainbow.build/Brainbow-own-target-headers.hmap -I/Users/andrewjgormley/Documents/jams/Brainbow/xcode/./build/Brainbow.build/Debug/Brainbow.build/Brainbow-all-target-headers.hmap -iquote /Users/andrewjgormley/Documents/jams/Brainbow/xcode/./build/Brainbow.build/Debug/Brainbow.build/Brainbow-project-headers.hmap -iquote../../../../git/notschool/Cinder/include -iquote../include -iquote../blocks/Cairo/include -iquote../blocks/LeapMotion/src -I/Users/andrewjgormley/Documents/jams/Brainbow/xcode/build/Debug/include -I../../../../git/notschool/Cinder/boost -I../blocks/Box2D/src -I../blocks/Cairo/include/macosx -I/Users/andrewjgormley/Documents/jams/Brainbow/xcode/./build/Brainbow.build/Debug/Brainbow.build/DerivedSources/i386 -I/Users/andrewjgormley/Documents/jams/Brainbow/xcode/./build/Brainbow.build/Debug/Brainbow.build/DerivedSources -F/Users/andrewjgormley/Documents/jams/Brainbow/xcode/build/Debug -include /var/folders/3y/t5y4y0f16_j18_6kjk1s6q6h0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/Brainbow_Prefix-chnfqnmsxignwyghutuopglinysq/Brainbow_Prefix.pch -MMD -MT dependencies -MF /Users/andrewjgormley/Documents/jams/Brainbow/xcode/./build/Brainbow.build/Debug/Brainbow.build/Objects-normal/i386/BrainbowApp.d --serialize-diagnostics /Users/andrewjgormley/Documents/jams/Brainbow/xcode/./build/Brainbow.build/Debug/Brainbow.build/Objects-normal/i386/BrainbowApp.dia -c /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../src/BrainbowApp.cpp -o /Users/andrewjgormley/Documents/jams/Brainbow/xcode/./build/Brainbow.build/Debug/Brainbow.build/Objects-normal/i386/BrainbowApp.o36"AC19A108-7577-46C5-AA7F-41EC518ED1ED-
 
 CCompileC ./build/Brainbow.build/Debug/Brainbow.build/Objects-normal/i386/Cairo.o /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../blocks/Cairo/src/Cairo.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
 s397540409.972500
@@ -7097,13 +7097,13 @@ x./build/Debug/Brainbow.app/Contents/Resources/leapsyc.wav
 lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection62"Copy ./build/Debug/Brainbow.app/Contents/Resources/leapsyc.wav84628fa6fbb1b741^aa43aea6fbb1b741^---0#0#0#-19%DVTDocumentLocation2@125"file://localhost/Users/andrewjgormley/Documents/jams/Brainbow/xcode/./build/Debug/Brainbow.app/Contents/Resources/leapsyc.wav0000000000000000^440"CpResource ../resources/leapsyc.wav ./build/Debug/Brainbow.app/Contents/Resources/leapsyc.wav    cd /Users/andrewjgormley/Documents/jams/Brainbow/xcode    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../resources/leapsyc.wav /Users/andrewjgormley/Documents/jams/Brainbow/xcode/./build/Debug/Brainbow.app/Contents/Resources36"99E32E67-4368-4808-B842-DDC9C4020289-
 
 CCpResource ../resources/loadtarg.wav ./build/Debug/Brainbow.app/Contents/Resources/loadtarg.wav
-s397548418.155265
-e397548418.183574
+s397625281.086018
+e397625281.102385
 r1
 xCpResource
 x../resources/loadtarg.wav
 x./build/Debug/Brainbow.app/Contents/Resources/loadtarg.wav
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection63"Copy ./build/Debug/Brainbow.app/Contents/Resources/loadtarg.wav02d527821bb2b741^490f2f821bb2b741^---0#0#0#-19%DVTDocumentLocation2@126"file://localhost/Users/andrewjgormley/Documents/jams/Brainbow/xcode/./build/Debug/Brainbow.app/Contents/Resources/loadtarg.wav000000000080d041^443"CpResource ../resources/loadtarg.wav ./build/Debug/Brainbow.app/Contents/Resources/loadtarg.wav    cd /Users/andrewjgormley/Documents/jams/Brainbow/xcode    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../resources/loadtarg.wav /Users/andrewjgormley/Documents/jams/Brainbow/xcode/./build/Debug/Brainbow.app/Contents/Resources36"F7B37458-F100-4518-9429-4BB8CF2E3A5C-
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection63"Copy ./build/Debug/Brainbow.app/Contents/Resources/loadtarg.wav6a1816c147b3b741^0bb31cc147b3b741^---0#0#0#-19%DVTDocumentLocation2@126"file://localhost/Users/andrewjgormley/Documents/jams/Brainbow/xcode/./build/Debug/Brainbow.app/Contents/Resources/loadtarg.wav0000000000000000^443"CpResource ../resources/loadtarg.wav ./build/Debug/Brainbow.app/Contents/Resources/loadtarg.wav    cd /Users/andrewjgormley/Documents/jams/Brainbow/xcode    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../resources/loadtarg.wav /Users/andrewjgormley/Documents/jams/Brainbow/xcode/./build/Debug/Brainbow.app/Contents/Resources36"CB5A0FC9-D714-45B6-9FD4-A2DC5FBFD712-
 
 CCpResource ../resources/lowdrone.wav ./build/Debug/Brainbow.app/Contents/Resources/lowdrone.wav
 s397540262.745343
@@ -7205,14 +7205,14 @@ x./build/Debug/Brainbow.app/Contents/Resources/shadowMap_vert.glsl
 lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection70"Copy ./build/Debug/Brainbow.app/Contents/Resources/shadowMap_vert.glsl9b3a8ba6fbb1b741^a4c68ca6fbb1b741^---0#0#0#-19%DVTDocumentLocation2@133"file://localhost/Users/andrewjgormley/Documents/jams/Brainbow/xcode/./build/Debug/Brainbow.app/Contents/Resources/shadowMap_vert.glsl000000000080d041^438"CpResource shadowMap_vert.glsl ./build/Debug/Brainbow.app/Contents/Resources/shadowMap_vert.glsl    cd /Users/andrewjgormley/Documents/jams/Brainbow/xcode    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/andrewjgormley/Documents/jams/Brainbow/xcode/shadowMap_vert.glsl /Users/andrewjgormley/Documents/jams/Brainbow/xcode/./build/Debug/Brainbow.app/Contents/Resources36"37AA244C-E212-4651-B170-7DDC002E00B2-
 
 CLd /Users/andrewjgormley/Documents/jams/Brainbow/xcode/./build/Debug/Brainbow.app/Contents/MacOS/Brainbow normal i386
-s397558923.544613
-e397558926.974487
+s397625538.568758
+e397625542.687780
 r1
 xLd
 x/Users/andrewjgormley/Documents/jams/Brainbow/xcode/./build/Debug/Brainbow.app/Contents/MacOS/Brainbow
 xnormal
 xi386
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection107"Link /Users/andrewjgormley/Documents/jams/Brainbow/xcode/./build/Debug/Brainbow.app/Contents/MacOS/Brainbow06838b8b44b2b741^4f78f98e44b2b741^---0#0#0#--1199"Ld ./build/Debug/Brainbow.app/Contents/MacOS/Brainbow normal i386    cd /Users/andrewjgormley/Documents/jams/Brainbow/xcode    setenv MACOSX_DEPLOYMENT_TARGET 10.7    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ -arch i386 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -L/Users/andrewjgormley/Documents/jams/Brainbow/xcode/build/Debug -F/Users/andrewjgormley/Documents/jams/Brainbow/xcode/build/Debug -filelist /Users/andrewjgormley/Documents/jams/Brainbow/xcode/./build/Brainbow.build/Debug/Brainbow.build/Objects-normal/i386/Brainbow.LinkFileList -mmacosx-version-min=10.7 -dead_strip ../../../../git/notschool/Cinder/lib/libcinder_d.a ../blocks/Cairo/lib/macosx/libcairo.a ../blocks/Cairo/lib/macosx/libpixman-1.a ../blocks/Cairo/lib/macosx/libpng14.a ../blocks/LeapMotion/lib/macosx/libLeap.dylib -stdlib=libc++ -framework Cocoa -framework OpenGL -framework CoreVideo -framework QTKit -framework Accelerate -framework AudioToolbox -framework AudioUnit -framework CoreAudio -o /Users/andrewjgormley/Documents/jams/Brainbow/xcode/./build/Debug/Brainbow.app/Contents/MacOS/Brainbow36"9F2B5CF9-80A7-4FAB-B8F3-AD9D4A903925-
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection107"Link /Users/andrewjgormley/Documents/jams/Brainbow/xcode/./build/Debug/Brainbow.app/Contents/MacOS/Brainbow52b591c248b3b741^0f46b0c648b3b741^---0#0#0#--1199"Ld ./build/Debug/Brainbow.app/Contents/MacOS/Brainbow normal i386    cd /Users/andrewjgormley/Documents/jams/Brainbow/xcode    setenv MACOSX_DEPLOYMENT_TARGET 10.7    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ -arch i386 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -L/Users/andrewjgormley/Documents/jams/Brainbow/xcode/build/Debug -F/Users/andrewjgormley/Documents/jams/Brainbow/xcode/build/Debug -filelist /Users/andrewjgormley/Documents/jams/Brainbow/xcode/./build/Brainbow.build/Debug/Brainbow.build/Objects-normal/i386/Brainbow.LinkFileList -mmacosx-version-min=10.7 -dead_strip ../../../../git/notschool/Cinder/lib/libcinder_d.a ../blocks/Cairo/lib/macosx/libcairo.a ../blocks/Cairo/lib/macosx/libpixman-1.a ../blocks/Cairo/lib/macosx/libpng14.a ../blocks/LeapMotion/lib/macosx/libLeap.dylib -stdlib=libc++ -framework Cocoa -framework OpenGL -framework CoreVideo -framework QTKit -framework Accelerate -framework AudioToolbox -framework AudioUnit -framework CoreAudio -o /Users/andrewjgormley/Documents/jams/Brainbow/xcode/./build/Debug/Brainbow.app/Contents/MacOS/Brainbow36"6BEE3827-A91D-48F0-AA41-1F38313705B9-
 
 CPBXCp ../blocks/LeapMotion/lib/macosx/libLeap.dylib ./build/Debug/Brainbow.app/Contents/MacOS/libLeap.dylib
 s397540432.492493
@@ -7249,10 +7249,10 @@ xcom.apple.compilers.llvm.clang.1_0.compiler
 lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection30"Precompile Brainbow_Prefix.pchcd04b7ddfbb1b741^b7091be7fbb1b741^---0#0#0#-19%DVTDocumentLocation2@87"file://localhost/Users/andrewjgormley/Documents/jams/Brainbow/xcode/Brainbow_Prefix.pch0000000000000000^3088"ProcessPCH++ /var/folders/3y/t5y4y0f16_j18_6kjk1s6q6h0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/Brainbow_Prefix-chnfqnmsxignwyghutuopglinysq/Brainbow_Prefix.pch.pth Brainbow_Prefix.pch normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/andrewjgormley/Documents/jams/Brainbow/xcode    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++-header -arch i386 -fmessage-length=0 -std=c++11 -stdlib=libc++ -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.7 -g -fvisibility-inlines-hidden -Wno-sign-conversion -iquote /Users/andrewjgormley/Documents/jams/Brainbow/xcode/./build/Brainbow.build/Debug/Brainbow.build/Brainbow-generated-files.hmap -I/Users/andrewjgormley/Documents/jams/Brainbow/xcode/./build/Brainbow.build/Debug/Brainbow.build/Brainbow-own-target-headers.hmap -I/Users/andrewjgormley/Documents/jams/Brainbow/xcode/./build/Brainbow.build/Debug/Brainbow.build/Brainbow-all-target-headers.hmap -iquote /Users/andrewjgormley/Documents/jams/Brainbow/xcode/./build/Brainbow.build/Debug/Brainbow.build/Brainbow-project-headers.hmap -iquote../../../../git/notschool/Cinder/include -iquote../include -iquote../blocks/Cairo/include -iquote../blocks/LeapMotion/src -I/Users/andrewjgormley/Documents/jams/Brainbow/xcode/build/Debug/include -I../../../../git/notschool/Cinder/boost -I../blocks/Box2D/src -I../blocks/Cairo/include/macosx -I/Users/andrewjgormley/Documents/jams/Brainbow/xcode/./build/Brainbow.build/Debug/Brainbow.build/DerivedSources/i386 -I/Users/andrewjgormley/Documents/jams/Brainbow/xcode/./build/Brainbow.build/Debug/Brainbow.build/DerivedSources -F/Users/andrewjgormley/Documents/jams/Brainbow/xcode/build/Debug --serialize-diagnostics /var/folders/3y/t5y4y0f16_j18_6kjk1s6q6h0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/Brainbow_Prefix-chnfqnmsxignwyghutuopglinysq/Brainbow_Prefix.pch.dia -c /Users/andrewjgormley/Documents/jams/Brainbow/xcode/Brainbow_Prefix.pch -o /var/folders/3y/t5y4y0f16_j18_6kjk1s6q6h0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/Brainbow_Prefix-chnfqnmsxignwyghutuopglinysq/Brainbow_Prefix.pch.pth -MMD -MT dependencies -MF /var/folders/3y/t5y4y0f16_j18_6kjk1s6q6h0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/Brainbow_Prefix-chnfqnmsxignwyghutuopglinysq/Brainbow_Prefix.pch.d36"F5451AD0-8AD3-415A-B26C-D1AAFCC8A7F2-
 
 CTouch /Users/andrewjgormley/Documents/jams/Brainbow/xcode/./build/Debug/Brainbow.app
-s397558926.990321
-e397558927.005311
+s397625542.702926
+e397625542.716083
 r1
 xTouch
 x/Users/andrewjgormley/Documents/jams/Brainbow/xcode/./build/Debug/Brainbow.app
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection84"Touch /Users/andrewjgormley/Documents/jams/Brainbow/xcode/./build/Debug/Brainbow.appc79efd8e44b2b741^fb77018f44b2b741^---0#0#0#--193"Touch ./build/Debug/Brainbow.app    cd /Users/andrewjgormley/Documents/jams/Brainbow/xcode    /usr/bin/touch -c /Users/andrewjgormley/Documents/jams/Brainbow/xcode/./build/Debug/Brainbow.app36"E1CF47FC-C494-4922-A24D-F98C2A9336CF-
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection84"Touch /Users/andrewjgormley/Documents/jams/Brainbow/xcode/./build/Debug/Brainbow.appf547b4c648b3b741^e350b7c648b3b741^---0#0#0#--193"Touch ./build/Debug/Brainbow.app    cd /Users/andrewjgormley/Documents/jams/Brainbow/xcode    /usr/bin/touch -c /Users/andrewjgormley/Documents/jams/Brainbow/xcode/./build/Debug/Brainbow.app36"2BEF99AF-BC92-4894-BF7E-368A067D59C9-
 
