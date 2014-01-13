@@ -23,7 +23,7 @@ Target::Target(Vec3f loc){
     targetMaterial.setSpecular( ColorA (.9, .9, .9, .0) );
 	targetMaterial.setDiffuse( ColorA (.9, .9, .9, .0));
 	targetMaterial.setAmbient(ColorA (.3, .3, .3f, .0)) ;
-	targetMaterial.setShininess( 600.0f )
+	targetMaterial.setShininess( 600.0f );
     
     gl::lineWidth(600);
     
@@ -35,8 +35,7 @@ Target::Target(Vec3f loc){
     gl::drawStrokedCircle(Vec2f(0,0), 91);
     gl::drawStrokedCircle(Vec2f(0,0), 88);
     gl::drawStrokedCircle(Vec2f(0,0), 85);
-    gl::drawStrokedCircle(Vec2f(0,0), 82);
-    
+    gl::drawStrokedCircle(Vec2f(0,0), 82);    
     gl::drawStrokedCircle(Vec2f(0,0), 20);
     
     tempTarget.endList();
@@ -112,7 +111,7 @@ void Target::charge(Vec3f screenCol){
     
     centerTarget = cinder::gl::DisplayList (GL_COMPILE);
     centerTarget.newList();
-    gl::drawSolidCircle(Vec2f(0,0), 18);
+    gl::drawSolidCircle(Vec2f   (0,0), 18);
     centerTarget.endList();
     centerTarget.setMaterial(centerMaterial);
     centerTarget.draw();
