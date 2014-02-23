@@ -1,5 +1,5 @@
 dependencies: \
-  /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../blocks/Box2D/src/Box2D/Dynamics/b2Fixture.cpp \
+  /Users/jandrewgormley/Documents/jams/Brainbow/blocks/Box2D/src/Box2D/Dynamics/b2Fixture.cpp \
   ../blocks/Box2D/src/Box2D/Dynamics/b2Fixture.h \
   ../blocks/Box2D/src/Box2D/Dynamics/b2Body.h \
   ../blocks/Box2D/src/Box2D/Common/b2Math.h \

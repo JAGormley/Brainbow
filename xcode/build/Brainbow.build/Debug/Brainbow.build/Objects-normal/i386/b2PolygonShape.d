@@ -1,5 +1,5 @@
 dependencies: \
-  /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../blocks/Box2D/src/Box2D/Collision/Shapes/b2PolygonShape.cpp \
+  /Users/jandrewgormley/Documents/jams/Brainbow/blocks/Box2D/src/Box2D/Collision/Shapes/b2PolygonShape.cpp \
   ../blocks/Box2D/src/Box2D/Collision/Shapes/b2PolygonShape.h \
   ../blocks/Box2D/src/Box2D/Collision/Shapes/b2Shape.h \
   ../blocks/Box2D/src/Box2D/Common/b2BlockAllocator.h \

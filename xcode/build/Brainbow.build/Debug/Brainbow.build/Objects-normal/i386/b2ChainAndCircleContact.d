@@ -1,5 +1,5 @@
 dependencies: \
-  /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../blocks/Box2D/src/Box2D/Dynamics/Contacts/b2ChainAndCircleContact.cpp \
+  /Users/jandrewgormley/Documents/jams/Brainbow/blocks/Box2D/src/Box2D/Dynamics/Contacts/b2ChainAndCircleContact.cpp \
   ../blocks/Box2D/src/Box2D/Dynamics/Contacts/b2ChainAndCircleContact.h \
   ../blocks/Box2D/src/Box2D/Dynamics/Contacts/b2Contact.h \
   ../blocks/Box2D/src/Box2D/Common/b2Math.h \

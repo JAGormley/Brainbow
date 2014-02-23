@@ -1,5 +1,5 @@
 dependencies: \
-  /Users/andrewjgormley/Documents/jams/Brainbow/xcode/../blocks/Box2D/src/Box2D/Dynamics/Joints/b2WeldJoint.cpp \
+  /Users/jandrewgormley/Documents/jams/Brainbow/blocks/Box2D/src/Box2D/Dynamics/Joints/b2WeldJoint.cpp \
   ../blocks/Box2D/src/Box2D/Dynamics/Joints/b2WeldJoint.h \
   ../blocks/Box2D/src/Box2D/Dynamics/Joints/b2Joint.h \
   ../blocks/Box2D/src/Box2D/Common/b2Math.h \
